@@ -1,26 +1,94 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@custom-variant dark (&:is(.dark *));
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white;
+}
+
+@theme inline{
+  --font-poppins : var(--font-poppins)
+;
+  --animate-marquee : marquee var(--duration) linear infinite;
+  --color-muted-foreground : var(----muted-foreground);
+  --color-muted : var(----muted);
+  --color-brand-foreground : var(----brand-foreground);
+  --color-brand : var(----brand);
+  --color-foreground : var(----foreground);
+  --color-background : var(----background);
+  @keyframes marquee {
+  from {
+    transform : translateX(0);
+    }
+  to {
+    transform : translateX(calc(-100% - var(--gap)));
+    }
+  }}
+@theme inline{
+  --font-montserrat : var(--font-montserrat)
+
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
+
+@utility col-center {
+  @apply flex flex-col items-center text-center justify-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility layout {
+  @apply w-[80%] ml-[10%] 
+}
+
+@layer components { 
+
+   .reusable-button{
+    @apply px-4 w-50 py-2 font-semibold text-base text-slate-50 bg-orange-500 border border-zinc-200 
+            rounded-full cursor-pointer transition-colors duration-300 hover:bg-orange-600;
+   }
+
+   .secondary-button{
+    @apply px-6 w-50 py-2 font-semibold text-base text-black bg-white border border-zinc-200
+            rounded-full cursor-pointer transition-colors duration-300 hover:bg-gray-200;
+   }
+
+   .hero-background{
+    @apply w-full h-screen bg-[linear-gradient(rgba(8,0,58,0.7),rgba(8,0,58,0.7)),url('/hero-background.jpeg')] 
+                 bg-cover bg-center text-white flex flex-col items-center justify-center px-4;
+   }
+
+   .sticky-h1{
+    @apply text-[10rem] font-bold mt-[20vh] leading-[0.9] text-transparent bg-linear-to-br from-zinc-400 to-zinc-900 bg-clip-text 
+                       sticky top-[10vh];
+   }
+
+}
+
+:root {
+  --background : hsl(0 0% 100%);
+  --foreground : hsl(240 10% 3.9%);
+  --brand : hsl(266 100% 50%);
+  --brand-foreground : hsl(270 100% 98%);
+  --muted : hsl(240 4.8% 95.9%);
+  --muted-foreground : hsl(240 3.8% 46.1%);
+}
+
+.dark {
+  --background : hsl(240 10% 3.9%);
+  --foreground : hsl(0 0% 98%);
+  --brand : hsl(266 70% 60%);
+  --brand-foreground : hsl(270 100% 98%);
+  --muted : hsl(240 3.7% 15.9%);
+  --muted-foreground : hsl(240 5% 64.9%);
 }
