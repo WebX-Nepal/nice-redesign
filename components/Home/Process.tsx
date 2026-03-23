@@ -1,89 +1,77 @@
+import { circle, lines, steps } from "@/constants/constant";
+import { div } from "framer-motion/client";
+import Image from "next/image";
 import React from "react";
 
 const Process = () => {
   return (
-    <div className="relative max-w-7xl mx-auto mt-20 h-screen">
-      <h1 className="text-3xl font-bold font-montserrat text-center">
-        Our Processes
-      </h1>
-      <div className="absolute left-1/2 top-15  w-1 h-full bg-black" />
-
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-white border border-gray-500 flex items-center justify-center font-semibold">
-        1
-      </div>
-
-      <div className="absolute top-55 left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-white border border-gray-500 flex items-center justify-center font-semibold">
-        2
-      </div>
-
-      <div className="absolute top-90 left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-white border border-gray-500 flex items-center justify-center font-semibold">
-        3
-      </div>
-
-      <div className="absolute top-125 left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-white border border-gray-500 flex items-center justify-center font-semibold">
-        4
-      </div>
-
-      <div className="absolute top-160 left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-white border border-gray-500 flex items-center justify-center font-semibold">
-        5
-      </div>
-
-      <div className="absolute left-0 w-[40%] bg-white p-6 rounded-2xl shadow-md border ">
-        <h3 className="font-semibold font-montserrat text-lg">
-          Inquiry Submission
-        </h3>
-        <p className="font-poppins">
-          The client submits a hiring request detailing the number of workers,
-          job roles, and project requirements. This helps us understand your
-          workforce needs clearly.
+    <div className="max-w-7xl mx-auto h-[145vh] flex flex-col gap-10 ">
+      <div className="flex flex-col gap-5">
+        <h1 className="text-3xl font-bold font-montserrat ">
+          Our <span className="text-[#2089CA]">Processes</span>
+        </h1>
+        <p className="text-sm md:text-lg text-neutral-500 leading-tight max-w-2xl ">
+          Nice Recruiting Agency has been a trusted partner for Gulf companies
+          seeking skilled Nepali workers.
         </p>
       </div>
 
-      <div className="absolute top-45 right-0 w-[40%] bg-white p-6 rounded-2xl shadow-md border">
-        <h3 className="font-semibold font-montserrat text-lg">
-          Requirement Discussion
-        </h3>
-        <p className="font-poppins">
-          Our team connects with you to discuss the requirements in detail,
-          including skills, experience, and deployment timelines, ensuring
-          complete clarity.
-        </p>
-      </div>
-      <div className="absolute top-80 left-0 w-[40%] bg-white p-6 rounded-2xl shadow-md border ">
-        <h3 className="font-semibold font-montserrat text-lg">
-          Candidate Selection
-        </h3>
-        <p className="font-poppins">
-          We present a list of pre-screened and qualified candidates for your approval, allowing 
-          you to select workers who perfectly match your project needs.
-        </p>
-      </div>
+      <div className="relative h-screen">
+        <div className="absolute left-1/2 top-15  w-0.75 h-full bg-zinc-300" />
 
-      <div className="absolute top-115 right-0 w-[40%] bg-white p-6 rounded-2xl shadow-md border">
-        <h3 className="font-semibold font-montserrat text-lg">
-          Documentation & Processing
-        </h3>
-        <p className="font-poppins">
-          Our team handles all legal and administrative paperwork, including contracts, visas, and 
-          travel arrangements, making the recruitment process hassle-free.
-        </p>
-      </div>
+        {circle.map((item) => (
+          <div
+            key={item.id}
+            className={`absolute ${item.position} left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-white border-3 border-zinc-300 flex items-center justify-center font-semibold`}
+          >
+            {item.no}
+          </div>
+        ))}
 
-      <div className="absolute top-150 left-0 w-[40%] bg-white p-6 rounded-2xl shadow-md border ">
-        <h3 className="font-semibold font-montserrat text-lg">
-          Deployment
-        </h3>
-        <p className="font-poppins">
-          Selected workers are deployed to your project sites in the Gulf countries efficiently and on time, 
-          ready to contribute from day one.
-        </p>
-      </div>
+        <div className="relative w-full ">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              className={`absolute w-[30%] bg-white p-6 z-50 rounded-2xl shadow-md border-3 border-zinc-300 ${step.position} flex flex-col gap-4`}
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="font-semibold font-montserrat text-lg text-[#2089CA]">
+                  {step.title}
+                </h3>
 
-      <div className="absolute right-[50%] top-30  w-32 h-1 bg-black" />
-      <div className="absolute left-[50%] top-65  w-32 h-1 bg-black" />
-      <div className="absolute right-[50%] top-100  w-32 h-1 bg-black" />
-      <div className="absolute left-[50%] top-135  w-32 h-1 bg-black" />
-      <div className="absolute right-[50%] top-170  w-32 h-1 bg-black" />
+                <Image
+                  src={step.image}
+                  alt="step1"
+                  width={50}
+                  height={50}
+                  className="rounded-xl"
+                />
+              </div>
+
+              <ul className="space-y-4">
+                {step.points.map((point, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 font-poppins text-sm"
+                  >
+                    <span className="w-5 h-5 flex items-center justify-center border rounded-full text-xs">
+                      ✓
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {lines.map((item) => (
+          <div
+            key={item.id}
+            className={`absolute ${item.location} ${item.position}  w-35 h-0.75 bg-zinc-300`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

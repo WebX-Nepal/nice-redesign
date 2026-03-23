@@ -1,32 +1,28 @@
 import Hero from "@/components/Home/Hero";
-// import Main from "@/components/HeroSection/main/Main";
-// alias wasn’t resolving at build time, fallback to a relative path:
-import Main from "../components/Home/Main";
-import HeroScroll from "@/components/Home/HeroScroll";
-import HeroSpecialization from "@/components/Home/HeroSpecialization";
-import { Slider } from "@/components/Home/Slider";
-import TopCountries from "@/components/Home/TopCountries";
-import { Testimonials } from "@/components/Home/Testimonials";
-import CompanyProfile from "@/components/Home/CompanyProfile";
+import AboutNice from "@/components/Home/AboutNice";
 import CtaSection from "@/components/Home/CtaSection";
-import GlobalPresence from "@/components/Home/GlobalPresence";
-import Process from "@/components/Home/Process";
 import { Globe } from "@/components/Home/Globe";
+import Process from "@/components/Home/Process";
+import Testimonials from "@/components/Home/Testimonials";
+import WhyChooseUs from "@/components/Home/WhyChooseUs";
+import Main from "../components/Home/Main";
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <Hero />
       {/* <GlobalPresence /> */}
       <Globe />
       <Main />
-      <HeroSpecialization />
+      <WhyChooseUs />
+      {/* <HeroSpecialization /> */}
       {/* <HeroScroll /> */}
       <Process />
       <Testimonials />
-      <CompanyProfile />
+      {/* <CompanyProfile /> */}
+      <AboutNice />
       <CtaSection />
-      <Slider />
+      {/* <Slider /> */}
     </div>
   );
 }

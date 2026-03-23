@@ -9,69 +9,11 @@ import { cards } from "@/constants/constant";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSpecialization = () => {
-  useGSAP(() => {
-    const scrollTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero-specialization",
-        start: "top 90%",
-        end: "bottom 20%",
-        scrub: true,
-      },
-    });
 
-    scrollTimeline
-      .fromTo(
-        ".my-container",
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: "back.out(1.7)",
-        },
-      )
-      .fromTo(
-        ".first-div",
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "back.out(1.7)",
-        },
-        "-=1",
-      );
-  }, []);
-
-  const handleMouseEnter = (e) => {
-    const icon = e.currentTarget.querySelector(".my-absolute-button");
-
-    if (icon) {
-      gsap.to(icon, {
-        rotation: "+=360",
-        duration: 1,
-        ease: "power2.out",
-      });
-    }
-  };
 
   return (
     <div className="hero-specialization flex flex-col items-center gap-8 max-w-7xl mx-auto mt-20 relative ">
-      {/* LEFT SIDE */}
-      {/* <div className="first-div sticky top-1/2 basis-[40%]">
-        <h1 className=" text-3xl font-semibold font-montserrat">
-          WHY CHOOSE US
-        </h1>
-      </div> */}
 
-      {/* RIGHT GRID */}
       <h1 className="text-3xl font-bold font-montserrat ">
           WHY CHOOSE US
         </h1>
@@ -80,7 +22,6 @@ const HeroSpecialization = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            onMouseEnter={handleMouseEnter}
             className={
               "my-container relative flex flex-col border-2 border-[#525252] rounded-2xl px-10 py-20 duration-300"
             }

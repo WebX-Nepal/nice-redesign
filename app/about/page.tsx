@@ -1,15 +1,22 @@
 import AboutUs from "@/components/About/AboutUs";
-import Chairman from "@/components/About/Chairman";
-import CoreValues from "@/components/About/CoreValues";
-import Leaders from "@/components/About/Leaders";
+import Legal from "@/components/About/Legal";
+import Members from "@/components/About/Members";
+import MissionAndVision from "@/components/About/MissionAndVision";
+import OurStory from "@/components/About/OurStory";
+import Trust from "@/components/About/Trust";
 
 export default function About() {
   return (
     <div>
       <AboutUs />
-      <Chairman />
+      <OurStory />
+      <MissionAndVision />
+      <Trust />
+      <Members />
+      <Legal />
+      {/* <Chairman />
       <Leaders />
-      <CoreValues />
+      <CoreValues /> */}
     </div>
   );
 }

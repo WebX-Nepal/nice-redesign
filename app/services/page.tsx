@@ -1,11 +1,13 @@
-import Industries from "@/components/Services/Industries";
+import Details from "@/components/Services/Details";
+import Hero from "@/components/Services/Hero";
 import OurServices from "@/components/Services/OurServices";
 
-export default function About() {
+export default function Blogs() {
   return (
     <div>
-        <OurServices />
-        <Industries />
+      <Hero />
+      <OurServices />
+      {/* <Details /> */}
     </div>
   );
 }

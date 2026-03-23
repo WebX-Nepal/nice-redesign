@@ -1,3 +1,5 @@
+import { Icon } from "@iconify/react";
+
 export const navbar = [
   {
     id: 1,
@@ -45,6 +47,33 @@ export const about = [
   },
 ];
 
+export const homeSections = [
+  {
+    title: "Construction Workers",
+    description:
+      "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and.",
+    buttonText: "Request Manpower",
+    image: "/services/construction.jpg",
+    reverse: false,
+  },
+  {
+    title: "Hospitality Staff",
+    description:
+      "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
+    buttonText: "Request Manpower",
+    image: "/services/hspitality.jpg",
+    reverse: true,
+  },
+  {
+    title: "Security Personnel",
+    description:
+      "Trained and disciplined residential security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
+    buttonText: "Request Manpower",
+    image: "/hands.png",
+    reverse: false,
+  }
+]
+
 export const sections = [
   {
     title: "Construction Workers",
@@ -65,7 +94,7 @@ export const sections = [
   {
     title: "Security Personnel",
     description:
-      "Trained and disciplined security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
+      "Trained and disciplined residential security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
     buttonText: "Request Manpower",
     image: "/hands.png",
     reverse: false,
@@ -73,7 +102,31 @@ export const sections = [
   {
     title: "General Labor",
     description:
-      "Reliable and hardworking general workers for warehouses, cleaning, loading/unloading, and other operational roles across industries.",
+      "Reliable and hardworking general workers for warehouses residential, cleaning, loading/unloading, and other operational roles across industries.",
+    buttonText: "Request Manpower",
+    image: "/hero5.png",
+    reverse: true,
+  },
+  {
+    title: "Construction Workers",
+    description:
+      "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and.",
+    buttonText: "Request Manpower",
+    image: "/services/construction.jpg",
+    reverse: false,
+  },
+  {
+    title: "Hospitality Staff",
+    description:
+      "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
+    buttonText: "Request Manpower",
+    image: "/services/hspitality.jpg",
+    reverse: true,
+  },
+  {
+    title: "General Labor",
+    description:
+      "Reliable and hardworking general workers for warehouses residential, cleaning, loading/unloading, and other operational roles across industries.",
     buttonText: "Request Manpower",
     image: "/hero5.png",
     reverse: true,
@@ -144,29 +197,32 @@ export const testimonials = [
     author: {
       name: "Emma Thompson",
       handle: "@emmaai",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
     },
     text: "Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.",
-    href: "https://twitter.com/emmaai"
+    href: "https://twitter.com/emmaai",
   },
   {
     author: {
       name: "David Park",
       handle: "@davidtech",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
     text: "The API integration is flawless. We've reduced our development time by 60% since implementing this solution.",
-    href: "https://twitter.com/davidtech"
+    href: "https://twitter.com/davidtech",
   },
   {
     author: {
       name: "Sofia Rodriguez",
       handle: "@sofiaml",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
     },
-    text: "Finally, an AI tool that actually understands context! The accuracy in natural language processing is impressive."
-  }
-]
+    text: "Finally, an AI tool that actually understands context! The accuracy in natural language processing is impressive.",
+  },
+];
 
 export const specializationDetails = [
   {
@@ -195,40 +251,175 @@ export const specializationDetails = [
   },
 ];
 
-
-// hero Specialization 
+// hero Specialization
 export const cards = [
   {
-    number: "0.1.",
     title: "Verified & Skilled Workers Only",
-    description:
-      "We provide pre-screened and qualified workers, ensuring your workforce is reliable and skilled for your projects.",
-    icon: "/search.svg",
-    bgColor: "#ffffff",
+    img: "/ChooseUs/verified.jpg",
+    icon : "bitcoin-icons:verify-filled"
   },
   {
-    number: "0.2.",
     title: "Fast Deployment Process",
-    description:
-      "Our streamlined recruitment process ensures workers are deployed quickly to meet your project timelines.",
-    icon: "/tick.svg",
-    bgColor: "#f4f4f5",
+    img: "/ChooseUs/deployment.jpg",
+    icon : "mdi:run-fast"
   },
   {
-    number: "0.3.",
     title: "Legal & Government Approved",
-    description:
-      "We handle all legal documentation and comply with government regulations, giving you a hassle-free hiring experience.",
-    icon: "/globe.svg",
-    bgColor: "#f4f4f5",
+    img: "/ChooseUs/legal.jpg",
+    icon : "mdi:legal"
   },
   {
-    number: "0.4.",
     title: "End-to-End Recruitment Handling",
-    description:
-      "From inquiry to deployment, we manage the entire recruitment process so you can focus on your business.",
-    icon: "/up.svg",
-    bgColor: "#f4f4f5",
+    img: "/ChooseUs/recruitment.jpg",
+    icon : "fluent-mdl2:recruitment-management"
   },
 ];
 
+
+// our process
+export const steps = [
+  {
+    id: 1,
+    title: "Inquiry Submission",
+    image : "/step1_1.png",
+    position: "left-30 top-5",
+    points: [
+      "Submit hiring request",
+      "Define number of workers",
+      "Specify job roles",
+      "Share project requirements",
+    ],
+  },
+  {
+    id: 2,
+    title: "Requirement Discussion",
+    image : "/step3.png",
+    position: "right-30 top-45",
+    points: [
+      "Discuss required skills",
+      "Define experience level",
+      "Set deployment timeline",
+      "Clarify expectations",
+    ],
+  },
+  {
+    id: 3,
+    title: "Candidate Selection",
+    image : "/step3.webp",
+    position: "left-30 top-85",
+    points: [
+      "Receive pre-screened candidates",
+      "Review qualifications",
+      "Shortlist suitable workers",
+      "Approve final selection",
+    ],
+  },
+  {
+    id: 4,
+    title: "Documentation & Processing",
+    image : "/step2.png",
+    position: "right-30 top-120",
+    points: [
+      "Prepare contracts",
+      "Handle visa processing",
+      "Complete legal paperwork",
+      "Arrange travel logistics",
+    ],
+  },
+  {
+    id: 5,
+    title: "Deployment",
+    image : "/step4.webp",
+    position: "left-30 top-170",
+    points: [
+      "Deploy workers on-site",
+      "Ensure timely arrival",
+      "Begin project work",
+      "Monitor initial performance",
+    ],
+  },
+];
+
+export const circle = [
+  {
+    id : 1,
+    no : 1,
+    position : "top-15"
+  },
+  {
+    id : 2,
+    no : 2,
+    position : "top-55"
+  },
+  {
+    id : 3,
+    no : 3,
+    position : "top-95"
+  },
+  {
+    id : 4,
+    no : 4,
+    position : "top-135"
+  },
+  {
+    id : 5,
+    no : 5,
+    position : "top-180"
+  },
+]
+
+export const lines = [
+  {
+    id : 1,
+    position : "top-25",
+    location : "right-[50%]"
+  },
+  {
+    id : 2,
+    position : "top-65",
+    location : "left-[50%]"
+  },
+  {
+    id : 3,
+    position : "top-105",
+    location : "right-[50%]"
+  },
+  {
+    id : 4,
+    position : "top-145",
+    location : "left-[50%]"
+  },
+  {
+    id : 5,
+    position : "top-190",
+    location : "right-[50%]"
+  },
+]
+
+
+// about members
+
+export const members = [
+  {
+    id : 1,
+    img : "/about/members/ceo.jpg",
+    title : "CEO"
+  },
+  {
+    id : 2,
+    img : "/about/members/leader1.jpg",
+    title : "Vice President"
+  },
+  {
+    id : 3,
+    img : "/about/members/leader3.jpg",
+    title : "Manager"
+  },
+  {
+    id : 1,
+    img : "/about/members/leader2.jpg",
+    title : "Director"
+  },
+]
+
+// services page

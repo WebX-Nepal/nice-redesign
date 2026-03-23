@@ -56,7 +56,7 @@ const images = [
  
 export function Slider() {
   return (
-    <div className=" flex flex-col justify-center gap-4 mt-20">
+    <div className=" flex flex-col justify-center gap-4 mt-25">
       <div className="flex items-center space-x-4 mx-auto w-full max-w-max">
         <InfiniteSlider direction="horizontal">
           {images.map((image) => (

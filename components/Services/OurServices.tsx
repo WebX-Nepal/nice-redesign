@@ -1,64 +1,59 @@
-import { div } from 'framer-motion/client';
-import React from 'react'
-
-const recruitmentSteps = [
-  {
-    title: "Client Requirement",
-    description:
-      "Understanding the unique needs of our clients, we begin the recruitment process by carefully analyzing and defining the specific requirements for the ideal candidate.",
-  },
-  {
-    title: "Labor Pre-Approval",
-    description:
-      "Prior to initiating recruitment efforts, we secure labor pre-approval to ensure a streamlined and compliant process, aligning with regulatory standards.",
-  },
-  {
-    title: "Advertising Publishing",
-    description:
-      "Leveraging targeted advertising channels, we strategically publish job opportunities, maximizing visibility to attract a diverse pool of qualified candidates.",
-  },
-  {
-    title: "Screening & Short Listing",
-    description:
-      "Rigorous screening processes are employed to meticulously evaluate applicants, resulting in a shortlist of candidates who best match the outlined client requirements.",
-  },
-  {
-    title: "Candidate Interview",
-    description:
-      "Conducting comprehensive interviews, we delve into the candidates’ skills, experiences, and cultural fit, ensuring alignment with both client needs and organizational values.",
-  },
-  {
-    title: "Practical Trade Testing",
-    description:
-      "To validate practical skills, candidates undergo thorough trade testing, allowing us to assess their hands-on capabilities and suitability for the specified roles.",
-  },
-];
+"use";
+import { sections } from "@/constants/constant";
+import Image from "next/image";
 
 const OurServices = () => {
   return (
-    <div className='layout mt-16 col-center h-[92vh] gap-10'>
-        <h1 className='font-bold text-6xl'>
-            What services do <br />
-            we provide?
+    <div className="max-w-7xl mx-auto mt-20 px-4 flex flex-col gap-10">
+      {/* <div className="flex flex-col gap-5">
+        <h1 className="text-center text-3xl font-bold font-montserrat text-[#2089CA]" >
+          Our Global Presence
         </h1>
 
-        <p className='text-lg'>At Nice Recruiting Agency, we are dedicated to providing comprehensive manpower solutions that empower businesses to succeed. Our services range from permanent and contract staffing to executive search, skill development, and outsourcing.</p>
+        <p className="text-center text-lg font-poppins max-w-150 mx-auto">
+          Nice Recruiting Agency has been a trusted partner for Gulf companies
+          seeking skilled Nepali workers.
+        </p>
+      </div> */}
 
-        <div className='grid grid-cols-3 gap-8'>
-            {recruitmentSteps.map((steps,index)=>(
-                <div key={index} className='bg-white rounded-xl border border-gray-200 p-6 shadow-sm 
-                     transform transition duration-300 hover:scale-105 hover:shadow-lg
-                     flex flex-col'>
-                    <h3 className='text-xl font-bold pb-4 '>{steps.title}</h3>
-                    <p>{steps.description}</p>
-                </div>
-            )
-            )}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sections.map((item, index) => (
+          <div
+            key={index}
+            className="group relative flex flex-col gap-4  rounded-2xl border border-zinc-400 cursor-pointer"
+          >
+            <div className="relative h-48 w-full">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover rounded-2xl"
+              />
+            </div>
 
+            <div className="absolute inset-0 group-hover:bg-black/60 rounded-2xl" />
 
+            <div className="flex flex-col justify-between text-center px-6 pb-6 gap-3">
+              <h2 className="text-lg font-semibold font-montserrat text-[#2089CA]">
+                {item.title}
+              </h2>
+
+              <p className="text-gray-500 text-sm font-poppins leading-relaxed">
+                {item.description}
+              </p>
+
+              <button
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 px-4 w-50 py-2 font-semibold text-base text-slate-50 bg-orange-500 border border-zinc-200 
+                   rounded-full cursor-pointer transition-colors duration-300 hover:bg-orange-600 opacity-0  group-hover:opacity-100 "
+              >
+                Request Manpower
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurServices
+export default OurServices;

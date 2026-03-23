@@ -2,12 +2,8 @@
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { homeSections, sections } from "@/constants/constant";
 import Button from "../ui/Button";
-import { title } from "process";
-import { div } from "framer-motion/client";
-import TopCountries from "./TopCountries";
-import { sections } from "@/constants/constant";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,50 +22,48 @@ const Main = () => {
   // }, []);
 
   return (
-    <div className="max-w-7xl mx-auto flex flex-col gap-20 mt-20">
+    <div className="max-w-7xl mx-auto h-screen flex flex-col items-center justify-center gap-20 ">
+      <div className="flex flex-col gap-10 rounded-[25px]">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-3xl font-bold font-montserrat ">
+            Our <span className="text-[#2089CA]">Services</span>
+          </h1>
 
-      <div className="flex flex-col gap-15 rounded-[25px]">
-        <h1 className="text-3xl font-bold font-montserrat text-center">
-          Our <span className="text-[#2089CA]">Services</span>
-        </h1>
+          <p className="text-sm md:text-lg text-neutral-500 leading-tight max-w-2xl">
+            Nice Recruiting Agency has been a trusted partner for Gulf companies
+            seeking skilled Nepali workers.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 px-4 ">
-          {sections.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {homeSections.map((item, index) => (
             <div
               key={index}
-              className="group flex flex-col h-[60vh] bg-white rounded-2xl overflow-hidden"
+              className="group relative flex flex-col gap-4 p-4 rounded-3xl border border-zinc-400 cursor-pointer"
             >
-
-              <div className="relative h-80 w-full">
+              <div className="relative h-48 w-full rounded-2xl overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  className="object-cover rounded-2xl "
                   fill
+                  className="object-cover  rounded-2xl transform transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
-              <div className="flex flex-col justify-center items-center p-8 gap-4">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-col justify-between   gap-3">
+                <h2 className="text-lg font-semibold font-montserrat text-[#2089CA]">
+                  {item.title}
+                </h2>
 
-                  <h2 className="text-orange-500 font-bold font-montserrat text-2xl">
-                    {item.title}
-                  </h2>
-                </div>
-
-                <p className="text-gray-600 font-poppins text-center">
+                <p className="text-gray-500 h-24 text-sm font-poppins leading-relaxed">
                   {item.description}
                 </p>
-
-                {/* <div className="mt-auto pt-4">
-                  <Button>
-                    {item.buttonText}
-                  </Button>
-                </div> */}
+                
               </div>
             </div>
           ))}
         </div>
+        <Button>View more</Button>
       </div>
     </div>
   );

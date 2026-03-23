@@ -4,19 +4,19 @@ import Image from "next/image";
 
 const CompanyProfile = () => {
   return (
-    <div className="max-w-7xl mx-auto flex flex-col gap-10">
-      <h1 className="text-center text-3xl font-bold font-montserrat">
-        About Nice Recruitment Agency
-      </h1>
-
-      <p className="text-center text-lg font-poppins max-w-150 mx-auto">
-        Since 2007, Nice Recruiting Agency has been a trusted partner for Gulf
-        companies seeking skilled Nepali workers.
-      </p>
+    <div className="max-w-7xl mx-auto flex flex-col gap-10 mt-20">
+      <div className="flex flex-col gap-5">
+        <h1 className="text-3xl font-bold font-montserrat text-center">
+          About <span className="text-[#2089CA]">Nice Recruitment Agency</span>
+        </h1>
+        <p className="text-sm md:text-lg text-neutral-500 text-center max-w-2xl mx-auto">
+          Since 2007, Nice Recruiting Agency has been a trusted partner for Gulf
+          companies seeking skilled Nepali workers.
+        </p>
+      </div>
 
       <div className="w-full flex gap-10">
-        <div className="flex flex-col gap-10 w-1/2">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-2 w-1/2 ">       
             <div className="relative col-span-2 w-full h-100">
               <Image
                 src="/office/office.jpg"
@@ -41,14 +41,11 @@ const CompanyProfile = () => {
                 className="object-cover"
               />
             </div>
-          </div>
         </div>
 
         <div className="w-1/2 flex flex-col  gap-10">
-      
           <div className="flex items-center p-5 border border-gray-200 rounded-xl ">
-            <div className="w-14 h-14 rounded-lg mr-5 text-3xl">📜
-            </div>
+            <div className="w-14 h-14 rounded-lg mr-5 text-3xl">📜</div>
 
             <div>
               <h3 className="text-lg font-semibold font-montserrat">
@@ -61,10 +58,8 @@ const CompanyProfile = () => {
             </div>
           </div>
 
-  
           <div className="flex items-center p-5 border border-gray-200 rounded-xl ">
-            <div className=" w-14 h-14 rounded-lg mr-5 text-3xl ">✔️
-            </div>
+            <div className=" w-14 h-14 rounded-lg mr-5 text-3xl ">✔️</div>
 
             <div>
               <h3 className="text-lg font-semibold font-montserrat">
@@ -77,10 +72,8 @@ const CompanyProfile = () => {
             </div>
           </div>
 
-  
           <div className="flex items-center p-5 border border-gray-200 rounded-xl ">
-            <div className="w-14 h-14 rounded-lg mr-5 text-3xl">📍
-            </div>
+            <div className="w-14 h-14 rounded-lg mr-5 text-3xl">📍</div>
 
             <div>
               <h3 className="text-lg font-semibold font-montserrat">
