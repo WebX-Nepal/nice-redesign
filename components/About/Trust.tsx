@@ -1,94 +1,103 @@
 import Image from "next/image";
-import React from "react";
+import { Icon } from "@iconify/react";
 
 const stats = [
-  { number: "15+", label: "Years Experience" },
-  { number: "10,000+", label: "Workers Deployed" },
-  { number: "6+", label: "Gulf Countries Served" },
-  { number: "500+", label: "Hiring Partners" },
+  { value: "20+", label: "Years Experience", icon: "mdi:calendar-check" },
+  { value: "2,000+", label: "Workers Deployed", icon: "mdi:account-group" },
+  { value: "7+", label: "Gulf Countries", icon: "mdi:earth" },
+  { value: "500+", label: "Hiring Partners", icon: "mdi:handshake" },
 ];
 
 const reasons = [
   {
+    icon: "mdi:clipboard-check-outline",
     title: "Proven Recruitment Process",
-    desc: "We follow a structured and transparent hiring process, ensuring every candidate is carefully screened and verified before deployment.",
+    desc: "Structured and transparent hiring — every candidate is carefully screened and verified before deployment.",
   },
   {
+    icon: "mdi:account-star-outline",
     title: "Reliable & Skilled Workforce",
-    desc: "Our workers are selected based on skill, experience, and work ethic, meeting the standards required by Gulf companies.",
+    desc: "Workers selected based on skill, experience, and work ethic, meeting the standards required by Gulf companies.",
   },
   {
+    icon: "mdi:clock-fast",
     title: "Fast & Timely Deployment",
-    desc: "We ensure quick mobilization of workers to meet your project deadlines without compromising quality.",
+    desc: "Quick mobilization of workers to meet your project deadlines without compromising quality.",
   },
   {
-    title: "Long-Term Client Relationships",
-    desc: "We build lasting partnerships by consistently delivering dependable manpower solutions to our clients.",
+    icon: "mdi:handshake-outline",
+    title: "Long-Term Partnerships",
+    desc: "We build lasting relationships by consistently delivering dependable manpower solutions.",
   },
 ];
 
 const Trust = () => {
   return (
-    <div className="w-full flex flex-col mt-20 gap-4">
-      <div className="max-w-7xl mx-auto w-full px-4 md:px-8">
-        <div className=" flex flex-col gap-3 ">
-          <h1 className="text-2xl md:text-3xl font-bold font-montserrat">
-            Why Global Companies{" "}
-            <span className="text-[#2089CA]">Trust Us</span>
-          </h1>
-          <p className="text-sm md:text-lg max-w-2xl leading-tight font-poppins text-neutral-600">
-            Trusted by companies across the Gulf for reliable, skilled, and
-            timely manpower solutions.
-          </p>
-        </div>
-
-        <div className=" grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-          {stats.map((item, i) => (
-            <div
-              key={i}
-              className="w-full flex flex-col items-center gap-2 p-6 rounded-xl "
-            >
-              <h3 className="text-3xl md:text-4xl font-bold font-montserrat text-[#2089CA]">
-                {item.number}
-              </h3>
-              <p className="text-gray-600 text-sm md:text-base font-montserrat text-center">
-                {item.label}
-              </p>
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="flex flex-col gap-4">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-2 rounded-full w-fit">
+              <Icon
+                icon="mdi:star-circle"
+                width="16"
+                className="text-orange-400"
+              />
+              Why Trust Us
             </div>
-          ))}
+            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight">
+              Why Global Companies{" "}
+              <span className="text-[#2089CA]">Trust Us</span>
+            </h2>
+            <p className="text-zinc-500 max-w-lg text-base md:text-lg leading-relaxed">
+              Trusted by companies across the Gulf for reliable, skilled, and
+              timely manpower solutions.
+            </p>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap gap-8">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-start gap-1">
+                <span className="text-3xl font-bold text-zinc-900">
+                  {s.value}
+                </span>
+                <span className="text-sm text-zinc-500">{s.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="relative w-full min-h-[60vh] flex items-center">
-        <Image
-          src="/About/about_hero.jpg"
-          alt="Nice Recruiting Agency"
-          fill
-          priority
-          className="object-cover blur-[4px]"
-        />
+        {/* Reasons grid over image */}
+        <div className="relative rounded-3xl overflow-hidden">
+          <Image
+            src="/About/about_hero.jpg"
+            alt="Trust"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-zinc-950/75" />
 
-        <div className="absolute inset-0 bg-black/70"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 md:px-8 py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {reasons.map((item, i) => (
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-10">
+            {reasons.map((r, i) => (
               <div
                 key={i}
-                className="p-6 backdrop-blur-xs bg-white/10  rounded-xl flex flex-col items-center gap-4 text-center"
+                className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 flex flex-col gap-4"
               >
-                <h3 className="text-base md:text-lg font-semibold font-montserrat text-[#2089CA]">
-                  {item.title}
-                </h3>
-                <p className="text-gray-200 text-sm font-poppins leading-relaxed">
-                  {item.desc}
+                <div className="w-12 h-12 rounded-xl bg-[#2089CA]/20 border border-[#2089CA]/30 flex items-center justify-center">
+                  <Icon icon={r.icon} width="24" className="text-[#2089CA]" />
+                </div>
+                <h3 className="text-white font-bold text-base">{r.title}</h3>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  {r.desc}
                 </p>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

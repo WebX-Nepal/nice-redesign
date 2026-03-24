@@ -1,91 +1,106 @@
 import Image from "next/image";
-import React from "react";
+import { Icon } from "@iconify/react";
+
+const items = [
+  {
+    type: "Mission",
+    icon: "mdi:target",
+    color: "bg-blue-50 text-[#2089CA]",
+    accent: "border-[#2089CA]",
+    image: "/About/mission.jpg",
+    text: "To bridge the gap between talent and opportunity by delivering skilled, verified Nepali workers to Gulf employers through a transparent, ethical, and efficient recruitment process.",
+    points: [
+      "Ethical hiring practices",
+      "Full legal compliance",
+      "Worker welfare first",
+    ],
+  },
+  {
+    type: "Vision",
+    icon: "mdi:eye-outline",
+    color: "bg-orange-50 text-orange-500",
+    accent: "border-orange-400",
+    image: "/About/vision.jpg",
+    text: "To become the most reliable human resource provider in the region — ensuring dignity for workers, growth for employers, and a stronger Nepal-Gulf workforce bridge.",
+    points: [
+      "Regional market leader",
+      "Dignified employment",
+      "Long-term partnerships",
+    ],
+  },
+];
 
 const MissionAndVision = () => {
   return (
-    <section className="max-w-7xl mx-auto mt-20 relative">
+    <section className="py-24 bg-zinc-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center gap-4 mb-16">
+          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-2 rounded-full">
+            <Icon icon="mdi:compass-outline" width="16" />
+            What Drives Us
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight">
+            Our Mission <span className="text-[#2089CA]">&amp; Vision</span>
+          </h2>
+        </div>
 
-      <div className="flex flex-col absolute left-0 top-13">
-        <h2 className="text-3xl font-bold font-montserrat leading-tight">
-          Our Mission <br /> <span className="text-[#2089CA]">& Vision</span>
-        </h2>
-      
-      </div>
-
-      <div className="flex flex-col gap-20">
-        <div className="flex flex-col md:flex-row-reverse items-center">
-        <div className="w-full md:w-3/4 bg-neutral-100 p-12 rounded-r-3xl relative">
-            <div className="md:pl-32">
-                <h3 className="text-3xl font-bold mb-4">Mission </h3>
-                <p className="text-neutral-600 leading-relaxed">
-                Nice Recruiting Agency has been a trusted partner for Gulf
-                companies seeking skilled Nepali workers. We aim to bridge the gap
-                between talent and opportunity.
-                </p>
-            </div>
-            
-            <div className="hidden md:block absolute top-1/2 -left-24 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-white overflow-hidden shadow-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {items.map((item) => (
+            <div
+              key={item.type}
+              className={`bg-white rounded-3xl border-t-4 ${item.accent} shadow-sm overflow-hidden`}
+            >
+              <div className="relative h-56">
                 <Image
-                src="/About/mission.jpg"
-                alt="Vision"
-                fill
-                className="object-cover "
+                  src={item.image}
+                  alt={item.type}
+                  fill
+                  className="object-cover"
                 />
-            </div>
-        </div>
-      </div>
+                <div className="absolute inset-0 bg-zinc-950/50" />
+                <div className="absolute top-5 left-5">
+                  <div
+                    className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center`}
+                  >
+                    <Icon icon={item.icon} width="24" />
+                  </div>
+                </div>
+                <div className="absolute bottom-5 left-5">
+                  <span className="text-white font-bold text-2xl">
+                    {item.type}
+                  </span>
+                </div>
+              </div>
 
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-3/4 bg-neutral-100 p-12 rounded-l-3xl relative">
-          <div className="md:pr-32">
-            <h3 className="text-3xl font-bold mb-4">Vision</h3>
-            <p className="text-neutral-600 leading-relaxed">
-                To become the most reliable and efficient human resource provider
-              in the region, ensuring dignity for workers and growth for
-              employers.
-              
-            </p>
-          </div>
-          
-          <div className="hidden md:block absolute top-1/2 -right-24 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-white overflow-hidden shadow-lg">
-            <Image
-              src="/About/vision.jpg"
-              alt="Mission"
-              fill
-              className="object-cover"
-            />
-          </div>
+              <div className="p-8 flex flex-col gap-5">
+                <p className="text-zinc-600 text-base leading-relaxed">
+                  {item.text}
+                </p>
+                <ul className="flex flex-col gap-2.5">
+                  {item.points.map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-center gap-3 text-zinc-700 text-sm font-medium"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                        <Icon
+                          icon="mdi:check"
+                          width="12"
+                          className="text-[#2089CA]"
+                        />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
       </div>
     </section>
   );
 };
 
 export default MissionAndVision;
-
-{
-  /* <div>
-        <div className='flex-between gap-6'>
-            <div className='group relative w-1/2 border border-gray-500 rounded-2xl h-80 p-10 text-center'>
-                <p className='text-lg filter blur-[4px] group-hover:blur-none transition duration-300'>
-                    It is our mission to support our clients through their current and future business challenges. Our activities, 
-                    aimed at finding a balance in the labour market serve to give our clients significance, which will support their
-                     business development via the growth of employment or improvement in the quality of their human resources.</p>
-                <h2 className='abs-center text-2xl  font-semibold pointer-events-none group-hover:opacity-0 '>
-                    Mission
-                </h2>
-            </div>
-            <div className='group relative w-1/2 border border-gray-500 rounded-2xl h-80 p-10 text-center'>
-                <p className='text-lg filter blur-[4px] group-hover:blur-none  transition-all duration-300'>Nice Recruiting Agency Pvt. Ltd.
-                     shall be the undisputed leader in the country’s recruitment and placement industry by continually providing our clients 
-                     with world-class and top notch service and competent workforce, by constantly upgrading its facilities and systems and by
-                      strengthening sustainable productive relationship within our employees and candidates.</p>
-                <h2 className='abs-center text-2xl font-semibold group-hover:opacity-0 transition-all duration-300'>
-                    vision
-                </h2>
-            </div>
-            
-        </div>
-    </div> */
-}

@@ -1,13 +1,7 @@
-import { div } from "framer-motion/client"
-import Component from "../ui/blogs"
-
+import BlogsGrid from "../ui/blogs";
 
 const Blogs = () => {
-  return (
-    <div>
-        <Component />
-    </div>
-  )
-}
+  return <BlogsGrid />;
+};
 
-export default Blogs
+export default Blogs;

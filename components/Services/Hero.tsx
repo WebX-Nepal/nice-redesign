@@ -1,13 +1,14 @@
-import React from 'react'
-import HeroSection from '../ui/HeroSection'
+import HeroSection from "../ui/HeroSection";
 
 const Hero = () => {
   return (
     <HeroSection
-      title="Our Manpower Services"
-      description="We provide skilled and reliable manpower from Nepal across multiple industries, helping businesses in the Gulf build efficient and dependable workforces."
+      badge="What We Offer"
+      badgeIcon="mdi:briefcase-outline"
+      title="Skilled Manpower for Every Industry"
+      description="We provide verified, reliable Nepali workers across multiple industries — helping Gulf businesses build efficient and dependable workforces from day one."
     />
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

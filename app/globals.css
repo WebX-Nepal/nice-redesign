@@ -5,12 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-  @apply bg-white;
+  @apply bg-white font-[var(--font-inter)];
 }
 
 @theme inline{
-  --font-poppins : var(--font-poppins)
-;
+  --font-sans : var(--font-inter);
+  --font-inter : var(--font-inter);
+  --font-playfair : var(--font-playfair);
   --animate-marquee : marquee var(--duration) linear infinite;
   --color-muted-foreground : var(----muted-foreground);
   --color-muted : var(----muted);
@@ -27,7 +28,7 @@ body {
     }
   }}
 @theme inline{
-  --font-montserrat : var(--font-montserrat)
+  --font-montserrat : var(--font-inter)
 
 }
 

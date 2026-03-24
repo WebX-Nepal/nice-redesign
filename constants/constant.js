@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 
 export const navbar = [
   {
@@ -12,6 +11,16 @@ export const navbar = [
     title: "About",
   },
   {
+    id: 5,
+    href: "/jobs",
+    title: "Our Talents",
+  },
+  {
+    id: 6,
+    href: "/contact",
+    title: "Contact",
+  },
+  {
     id: 3,
     href: "/services",
     title: "Services",
@@ -20,11 +29,6 @@ export const navbar = [
     id: 4,
     href: "/blogs",
     title: "Blogs",
-  },
-  {
-    id: 5,
-    href: "/jobs",
-    title: "Jobs",
   },
 ];
 
@@ -51,27 +55,57 @@ export const homeSections = [
   {
     title: "Construction Workers",
     description:
-      "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and.",
+      "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and specialized builds.",
     buttonText: "Request Manpower",
-    image: "/services/construction.jpg",
-    reverse: false,
+    image: "/jobs/construction_workers.jpg",
+    icon: "mdi:hard-hat",
+    tag: "High Demand",
   },
   {
     title: "Hospitality Staff",
     description:
       "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
     buttonText: "Request Manpower",
-    image: "/services/hspitality.jpg",
-    reverse: true,
+    image: "/jobs/hospitality_staff.jpg",
+    icon: "mdi:room-service",
+    tag: "Gulf Ready",
   },
   {
     title: "Security Personnel",
     description:
-      "Trained and disciplined residential security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
+      "Trained and disciplined security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
     buttonText: "Request Manpower",
-    image: "/hands.png",
-    reverse: false,
-  }
+    image: "/jobs/security.jpg",
+    icon: "mdi:shield-account",
+    tag: "Certified",
+  },
+  {
+    title: "General Labour",
+    description:
+      "Reliable and hardworking general workers for warehouses, cleaning, loading/unloading, and other operational roles across industries.",
+    buttonText: "Request Manpower",
+    image: "/jobs/general_labour.jpg",
+    icon: "mdi:account-wrench",
+    tag: "Available Now",
+  },
+  {
+    title: "Facility Management",
+    description:
+      "Experienced facility staff for maintenance, cleaning, and operations management of commercial and residential properties across the Gulf.",
+    buttonText: "Request Manpower",
+    image: "/office/office.jpg",
+    icon: "mdi:office-building-cog",
+    tag: "Specialized",
+  },
+  {
+    title: "Driver & Logistics",
+    description:
+      "Licensed drivers and logistics personnel for transportation, delivery, and fleet management roles in UAE, Qatar, Saudi Arabia and beyond.",
+    buttonText: "Request Manpower",
+    image: "/jobs/grow.jpg",
+    icon: "mdi:truck-delivery",
+    tag: "Licensed",
+  },
 ]
 
 export const sections = [
@@ -256,22 +290,22 @@ export const cards = [
   {
     title: "Verified & Skilled Workers Only",
     img: "/ChooseUs/verified.jpg",
-    icon : "bitcoin-icons:verify-filled"
+    icon: "bitcoin-icons:verify-filled"
   },
   {
     title: "Fast Deployment Process",
     img: "/ChooseUs/deployment.jpg",
-    icon : "mdi:run-fast"
+    icon: "mdi:run-fast"
   },
   {
     title: "Legal & Government Approved",
     img: "/ChooseUs/legal.jpg",
-    icon : "mdi:legal"
+    icon: "mdi:legal"
   },
   {
     title: "End-to-End Recruitment Handling",
     img: "/ChooseUs/recruitment.jpg",
-    icon : "fluent-mdl2:recruitment-management"
+    icon: "fluent-mdl2:recruitment-management"
   },
 ];
 
@@ -281,7 +315,7 @@ export const steps = [
   {
     id: 1,
     title: "Inquiry Submission",
-    image : "/step1_1.png",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     position: "left-30 top-5",
     points: [
       "Submit hiring request",
@@ -293,7 +327,7 @@ export const steps = [
   {
     id: 2,
     title: "Requirement Discussion",
-    image : "/step3.png",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
     position: "right-30 top-45",
     points: [
       "Discuss required skills",
@@ -305,7 +339,7 @@ export const steps = [
   {
     id: 3,
     title: "Candidate Selection",
-    image : "/step3.webp",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
     position: "left-30 top-85",
     points: [
       "Receive pre-screened candidates",
@@ -317,7 +351,7 @@ export const steps = [
   {
     id: 4,
     title: "Documentation & Processing",
-    image : "/step2.png",
+    image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80",
     position: "right-30 top-120",
     points: [
       "Prepare contracts",
@@ -329,7 +363,7 @@ export const steps = [
   {
     id: 5,
     title: "Deployment",
-    image : "/step4.webp",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
     position: "left-30 top-170",
     points: [
       "Deploy workers on-site",

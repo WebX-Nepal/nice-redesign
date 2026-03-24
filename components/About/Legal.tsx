@@ -1,99 +1,113 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import React from "react";
 
 const items = [
   {
     icon: "duo-icons:approved",
     title: "Government Approved",
-    desc: "We are a licensed recruitment agency authorized by the Government of Nepal, ensuring full compliance with official regulations and international standards.",
+    desc: "Licensed by the Government of Nepal, ensuring full compliance with official regulations and international standards.",
   },
   {
-    icon: "mdi:file-text-outline",
+    icon: "mdi:file-document-check-outline",
     title: "Legal Hiring Process",
-    desc: "Every step, from candidate selection to visa processing, follows a structured and legally compliant process for smooth and risk-free recruitment.",
+    desc: "Every step — from candidate selection to visa processing — follows a legally compliant process for risk-free recruitment.",
   },
   {
-    icon: "fa-solid:handshake",
+    icon: "mdi:handshake-outline",
     title: "Ethical Recruitment",
-    desc: "We maintain transparency, fair practices, and no hidden charges, ensuring ethical recruitment for both clients and workers.",
+    desc: "Transparent practices, fair terms, and no hidden charges — ethical recruitment for both clients and workers.",
   },
   {
-    icon: "solar:shield-bold",
+    icon: "mdi:shield-account-outline",
     title: "Worker Protection",
-    desc: "We ensure proper documentation, contracts, and worker welfare, promoting safe and secure employment abroad.",
+    desc: "Proper documentation, contracts, and welfare support ensuring safe and secure employment abroad.",
   },
 ];
 
 const Legal = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-20 flex flex-col gap-10">
-      <div className=" flex flex-col  gap-3 ">
-        <h1 className="text-2xl md:text-3xl font-bold font-montserrat">
-          Compliance & <span className="text-[#2089CA]">Transparency</span>
-        </h1>
-        <p className="text-sm md:text-lg font-poppins text-neutral-600 leading-tight max-w-2xl">
-          We follow strict legal and ethical standards to ensure safe,
-          transparent, and reliable recruitment for both clients and workers.
-        </p>
-      </div>
-
-      <div className="flex gap-10">
-        <div className="w-1/2 grid grid-cols-2 gap-6">
-          <div className="relative col-span-2 h-100">
-            <Image
-              src="/About/legal.jpg"
-              alt="Compliance and legal process"
-              fill
-              className="object-cover rounded-3xl"
+    <section className="py-24 bg-zinc-950">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center gap-4 mb-16">
+          <div className="inline-flex items-center gap-2 bg-white/10 text-white text-sm font-semibold px-4 py-2 rounded-full">
+            <Icon
+              icon="mdi:shield-check"
+              width="16"
+              className="text-[#2089CA]"
             />
-            <div className="absolute inset-0 bg-black/40 rounded-3xl" />
+            Legal &amp; Compliance
           </div>
-
-          <div className="relative h-62.5">
-            <Image
-              src="/About/legal2.jpg"
-              alt="Legal process"
-              fill
-              className="object-cover rounded-3xl"
-            />
-            <div className="absolute inset-0 bg-black/40 rounded-3xl" />
-          </div>
-
-          <div className="relative h-62.5">
-            <Image
-              src="/About/legal3.jpg"
-              alt="Compliance"
-              fill
-              className="object-cover rounded-3xl"
-            />
-            <div className="absolute inset-0 bg-black/40 rounded-3xl" />
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Compliance &amp;{" "}
+            <span className="text-[#2089CA]">Transparency</span>
+          </h2>
+          <p className="text-zinc-400 max-w-xl text-base md:text-lg leading-relaxed">
+            We follow strict legal and ethical standards to ensure safe,
+            transparent, and reliable recruitment.
+          </p>
         </div>
 
-        <div className="w-1/2 flex flex-col gap-6">
-          {items.map((item, i) => {
-            return (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Image collage */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative col-span-2 h-64 rounded-2xl overflow-hidden">
+              <Image
+                src="/About/legal.jpg"
+                alt="Compliance"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-zinc-950/30" />
+            </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden">
+              <Image
+                src="/About/legal2.jpg"
+                alt="Legal"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-zinc-950/30" />
+            </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden">
+              <Image
+                src="/About/legal3.jpg"
+                alt="Compliance"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-zinc-950/30" />
+            </div>
+          </div>
+
+          {/* Cards */}
+          <div className="flex flex-col gap-4">
+            {items.map((item, i) => (
               <div
                 key={i}
-                className="p-5 bg-white border border-gray-200 rounded-xl "
+                className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-200"
               >
-                <div className="flex items-center justify-between p-2 rounded-lg">
-                  <h3 className="font-semibold font-montserrat text-[#2089CA]">
+                <div className="w-12 h-12 rounded-xl bg-[#2089CA]/20 border border-[#2089CA]/30 flex items-center justify-center shrink-0">
+                  <Icon
+                    icon={item.icon}
+                    width="22"
+                    className="text-[#2089CA]"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-base mb-1">
                     {item.title}
                   </h3>
-                  <Icon icon={item.icon} width="24" height="24" className="text-[#2089CA]" />
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
-
-                <p className="text-sm text-gray-600 mt-2 font-poppins leading-relaxed p-2">
-                  {item.desc}
-                </p>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

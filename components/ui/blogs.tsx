@@ -1,94 +1,133 @@
-import { ArrowRight } from "lucide-react";
+import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
+import { blogs } from "@/lib/blogs";
 
-const articlesData = [
-  {
-    // category: "BRANDING",
-    description:
-      "Learn the essential skills employers look for in construction professionals to ensure projects are completed efficiently and safely.",
-    image: "https://images.unsplash.com/photo-1558174685-430919a96c8d",
-    publishDate: "Dec 22, 2025",
-    readMoreLink: "#",
-    title: "Top 5 Skills Every Construction Worker Should Have",
-  },
-  {
-    // category: "ARTDIRECTION",
-    description:
-      "Discover best practices for hiring and managing skilled hospitality staff to provide a world-class guest experience and thinking.",
-    image: "https://images.unsplash.com/photo-1466228432269-af42b400b934",
-    publishDate: "Nov 11, 2025",
-    readMoreLink: "#",
-    title: "Hospitality Staff Hiring: Key Tips for Hotels & Restaurants",
-  },
-  {
-    // category: "DESIGNSYSTEM",
-    description:
-      "Efficient warehouse operations start with the right manpower. Learn how to optimize staff allocation and boost productivity.",
-    image: "https://images.unsplash.com/photo-1605907126120-f68611516ecc",
-    publishDate: "Oct 9, 2025",
-    readMoreLink: "#",
-    title: "How to Streamline Your Warehouse Operations with Skilled Labor",
-  },
-];
-export default function Component() {
+export default function BlogsGrid() {
   return (
-    <section className="max-w-7xl mx-auto mt-20 dark:bg-black">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-8  sm:mb-12">
-          <h2 className="font-montserrat text-xl font-bold text-[#2089CA] tracking-tight sm:text-2xl md:text-3xl dark:text-gray-100">
-            Blog Articles
-          </h2>
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col gap-4">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-2 rounded-full w-fit">
+              <Icon icon="mdi:newspaper-variant-outline" width="16" />
+              Blog Articles
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight">
+              Latest <span className="text-[#2089CA]">Insights</span>
+            </h2>
+            <p className="text-zinc-500 max-w-lg text-base md:text-lg leading-relaxed">
+              Industry tips, recruitment guides, and workforce insights from our
+              team.
+            </p>
+          </div>
         </div>
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {articlesData.map((article, index) => (
-            <div
-              className="cursor-pointer rounded-2xl border border-gray-300/50 bg-white/50 shadow-none backdrop-blur-sm transition-shadow hover:shadow-md dark:border-gray-800/50 dark:bg-gray-950/50"
-              key={index}
+
+        {/* Featured post — first blog */}
+        <Link
+          href={`/blogs/${blogs[0].slug}`}
+          className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-10"
+        >
+          <div className="relative h-72 lg:h-auto overflow-hidden">
+            <Image
+              src={blogs[0].image}
+              alt={blogs[0].title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-zinc-950/20" />
+            <div className="absolute top-4 left-4">
+              <span className="bg-[#2089CA] text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                Featured
+              </span>
+            </div>
+          </div>
+          <div className="bg-white p-8 md:p-10 flex flex-col justify-center gap-5">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2089CA] bg-blue-50 px-3 py-1 rounded-full w-fit">
+              {blogs[0].category}
+            </span>
+            <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 leading-snug group-hover:text-[#2089CA] transition-colors duration-200">
+              {blogs[0].title}
+            </h3>
+            <p className="text-zinc-500 text-base leading-relaxed">
+              {blogs[0].description}
+            </p>
+            <div className="flex items-center justify-between pt-2 border-t border-zinc-100">
+              <div className="flex items-center gap-4 text-xs text-zinc-400">
+                <span className="flex items-center gap-1">
+                  <Icon icon="mdi:calendar-outline" width="13" />
+                  {blogs[0].publishDate}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Icon icon="mdi:clock-outline" width="13" />
+                  {blogs[0].readTime}
+                </span>
+              </div>
+              <span className="flex items-center gap-1.5 text-sm font-semibold text-[#2089CA]">
+                Read More
+                <Icon icon="mdi:arrow-right" width="15" />
+              </span>
+            </div>
+          </div>
+        </Link>
+
+        {/* Remaining posts grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blogs.slice(1).map((article) => (
+            <Link
+              key={article.slug}
+              href={`/blogs/${article.slug}`}
+              className="group bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col"
             >
-              <div className="p-0">
-                <div className="relative mb-4 sm:mb-6">
-                  <Image
-                    alt={article.title}
-                    className="aspect-square h-64 w-full object-cover rounded-2xl sm:h-72 md:h-80"
-                    height={1080}
-                    src={article.image || "/placeholder.svg"}
-                    width={1920}
-                  />
-                  {/* <p
-                    className="absolute top-0 left-0 rounded-none border-0 bg-white px-2 py-0.5 font-medium text-[10px] text-black uppercase backdrop-blur-sm sm:-top-0.5 sm:-left-0.5 sm:px-3 sm:py-1 sm:text-xs dark:bg-gray-950/90 dark:text-gray-200"
-                    variant="secondary"
-                  >
-                    #{article.category}
-                  </p> */}
-                </div>
-                <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-                  <h3 className="mb-2 font-normal text-base text-[#2089CA] tracking-tight sm:mb-2 sm:text-lg md:text-2xl dark:text-gray-100">
-                    {article.title}
-                  </h3>
-                  <p className="mb-4 text-gray-600 text-xs leading-relaxed sm:mb-6 sm:text-sm dark:text-gray-400">
-                    {article.description}
-                  </p>
-                  {/* Read More Link and Date */}
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <Link
-                      className="group relative flex items-center overflow-hidden font-medium text-gray-900 text-xs transition-colors hover:text-gray-700 sm:text-sm dark:text-gray-100 dark:hover:text-gray-300"
-                      href={article.readMoreLink}
-                    >
-                      <span className="mr-2 overflow-hidden rounded-none border border-gray-200 p-2 transition-colors duration-300 ease-in group-hover:bg-black group-hover:text-white sm:p-3 dark:border-gray-800 dark:group-hover:bg-white dark:group-hover:text-black">
-                        <ArrowRight className="h-3 w-3 translate-x-0 opacity-100 transition-all duration-500 ease-in group-hover:translate-x-8 group-hover:opacity-0 sm:h-4 sm:w-4" />
-                        <ArrowRight className="absolute top-1/2 -left-4 h-4 w-4 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:left-2 sm:-left-5 sm:h-4 sm:w-4 sm:group-hover:left-3" />
-                      </span>
-                      Read more
-                    </Link>
-                    <span className="flex items-center gap-2 text-[10px] text-gray-500 sm:gap-3 sm:text-xs dark:text-gray-500">
-                      {article.publishDate}
-                      <span className="w-6 border-gray-300 border-t sm:w-16 dark:border-gray-700" />
-                    </span>
-                  </div>
+              {/* Image */}
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-zinc-950/10 group-hover:bg-zinc-950/0 transition-colors duration-300" />
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#2089CA] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {article.category}
+                  </span>
                 </div>
               </div>
-            </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col gap-3 flex-1">
+                <div className="flex items-center gap-3 text-xs text-zinc-400">
+                  <span className="flex items-center gap-1">
+                    <Icon icon="mdi:calendar-outline" width="13" />
+                    {article.publishDate}
+                  </span>
+                  <span className="w-1 h-1 rounded-full bg-zinc-300" />
+                  <span className="flex items-center gap-1">
+                    <Icon icon="mdi:clock-outline" width="13" />
+                    {article.readTime}
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-bold text-zinc-900 leading-snug group-hover:text-[#2089CA] transition-colors duration-200">
+                  {article.title}
+                </h3>
+
+                <p className="text-zinc-500 text-sm leading-relaxed flex-1 line-clamp-3">
+                  {article.description}
+                </p>
+
+                <div className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-[#2089CA]">
+                  Read More
+                  <Icon
+                    icon="mdi:arrow-right"
+                    width="15"
+                    className="group-hover:translate-x-1 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

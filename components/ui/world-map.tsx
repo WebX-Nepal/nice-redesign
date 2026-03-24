@@ -14,10 +14,7 @@ interface MapProps {
   lineColor?: string;
 }
 
-export function WorldMap({
-  dots = [],
-  lineColor = "#2089CA",
-}: MapProps) {
+export function WorldMap({ dots = [], lineColor = "#2089CA" }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
@@ -38,7 +35,7 @@ export function WorldMap({
 
   const createCurvedPath = (
     start: { x: number; y: number },
-    end: { x: number; y: number }
+    end: { x: number; y: number },
   ) => {
     const midX = (start.x + end.x) / 2;
     const midY = Math.min(start.y, end.y) - 50;
@@ -99,12 +96,7 @@ export function WorldMap({
         {dots.map((dot, i) => (
           <g key={`points-group-${i}`}>
             <g key={`start-${i}`}>
-              <circle
-                cx={projectPoint(dot.start.lat, dot.start.lng).x}
-                cy={projectPoint(dot.start.lat, dot.start.lng).y}
-                r="2"
-                fill={lineColor}
-              />
+              {/* Pulsing ring */}
               <circle
                 cx={projectPoint(dot.start.lat, dot.start.lng).x}
                 cy={projectPoint(dot.start.lat, dot.start.lng).y}
@@ -115,7 +107,7 @@ export function WorldMap({
                 <animate
                   attributeName="r"
                   from="2"
-                  to="8"
+                  to="10"
                   dur="1.5s"
                   begin="0s"
                   repeatCount="indefinite"
@@ -129,14 +121,18 @@ export function WorldMap({
                   repeatCount="indefinite"
                 />
               </circle>
+              {/* Logo icon */}
+              <image
+                href="/nice-logo.png"
+                x={projectPoint(dot.start.lat, dot.start.lng).x - 14}
+                y={projectPoint(dot.start.lat, dot.start.lng).y - 14}
+                width="28"
+                height="28"
+                style={{ borderRadius: "50%" }}
+              />
             </g>
             <g key={`end-${i}`}>
-              <circle
-                cx={projectPoint(dot.end.lat, dot.end.lng).x}
-                cy={projectPoint(dot.end.lat, dot.end.lng).y}
-                r="2"
-                fill={lineColor}
-              />
+              {/* Pulsing ring */}
               <circle
                 cx={projectPoint(dot.end.lat, dot.end.lng).x}
                 cy={projectPoint(dot.end.lat, dot.end.lng).y}
@@ -147,7 +143,7 @@ export function WorldMap({
                 <animate
                   attributeName="r"
                   from="2"
-                  to="8"
+                  to="10"
                   dur="1.5s"
                   begin="0s"
                   repeatCount="indefinite"
@@ -161,6 +157,14 @@ export function WorldMap({
                   repeatCount="indefinite"
                 />
               </circle>
+              {/* Logo icon */}
+              <image
+                href="/nice-logo.png"
+                x={projectPoint(dot.end.lat, dot.end.lng).x - 14}
+                y={projectPoint(dot.end.lat, dot.end.lng).y - 14}
+                width="28"
+                height="28"
+              />
             </g>
           </g>
         ))}

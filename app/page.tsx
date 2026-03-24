@@ -6,23 +6,20 @@ import Process from "@/components/Home/Process";
 import Testimonials from "@/components/Home/Testimonials";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import Main from "../components/Home/Main";
+import Outlets from "@/components/Home/Outlets";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      {/* <GlobalPresence /> */}
+      <AboutNice />
+      <WhyChooseUs />
       <Globe />
       <Main />
-      <WhyChooseUs />
-      {/* <HeroSpecialization /> */}
-      {/* <HeroScroll /> */}
       <Process />
+      <Outlets />
       <Testimonials />
-      {/* <CompanyProfile /> */}
-      <AboutNice />
       <CtaSection />
-      {/* <Slider /> */}
     </div>
   );
 }
