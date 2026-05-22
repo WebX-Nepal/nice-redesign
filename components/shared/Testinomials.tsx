@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import Image from "next/image";
-import { Github, Twitter, Youtube, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin } from "lucide-react";
 
 interface Testimonial {
   name: string;
@@ -63,14 +62,13 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// Duplicate for seamless loop
 const ROW_1 = [...testimonials, ...testimonials, ...testimonials];
 const ROW_2 = [...testimonials].reverse();
 const ROW_2_ITEMS = [...ROW_2, ...ROW_2, ...ROW_2];
 
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <div className="border border-gray-300 hover:border-[#2089CA]/40 shrink-0 w-[320px]  bg-[#F3F3F4] hover:bg-[#EEF6FC]  rounded-xl p-4 flex flex-col gap-4 mx-2">
+    <div className="border border-gray-300 hover:border-[#2089CA]/40 shrink-0 w-[320px] bg-[#F3F3F4] hover:bg-[#EEF6FC] rounded-xl p-4 flex flex-col gap-4 mx-2">
       <div className="flex items-center gap-3">
         <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 bg-zinc-200">
           <Image
@@ -87,7 +85,6 @@ function TestimonialCard({ item }: { item: Testimonial }) {
         </div>
       </div>
 
-      {/* Stars */}
       <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (
           <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -98,7 +95,6 @@ function TestimonialCard({ item }: { item: Testimonial }) {
 
       <p className="text-xs text-zinc-600 leading-relaxed line-clamp-3">{item.description}</p>
 
-      {/* Social icons */}
       <div className="flex gap-2 mt-auto">
         {[Github, Twitter, Linkedin].map((Icon, i) => (
           <div
@@ -118,29 +114,35 @@ export default function HorizontalTestimonials() {
   const row2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Row 1 — scrolls left
-      gsap.to(row1Ref.current, {
-        x: "-33.333%",
-        ease: "none",
-        duration: 50,
-        repeat: -1,
-      });
+    let ctx: { revert: () => void } | null = null;
 
-      // Row 2 — scrolls right (starts offset)
-      gsap.fromTo(
-        row2Ref.current,
-        { x: "-33.333%" },
-        {
-          x: "0%",
+    const init = async () => {
+      const gsap = (await import("gsap")).default;
+
+      ctx = gsap.context(() => {
+        gsap.to(row1Ref.current, {
+          x: "-33.333%",
           ease: "none",
-          duration: 40,
+          duration: 50,
           repeat: -1,
-        }
-      );
-    });
+        });
 
-    return () => ctx.revert();
+        gsap.fromTo(
+          row2Ref.current,
+          { x: "-33.333%" },
+          {
+            x: "0%",
+            ease: "none",
+            duration: 40,
+            repeat: -1,
+          }
+        );
+      });
+    };
+
+    init();
+
+    return () => ctx?.revert();
   }, []);
 
   return (
@@ -167,7 +169,7 @@ export default function HorizontalTestimonials() {
           }}
         />
 
-        {/* Row 1 — left */}
+        {/* Row 1 */}
         <div className="overflow-hidden">
           <div ref={row1Ref} className="flex will-change-transform">
             {ROW_1.map((item, i) => (
@@ -176,7 +178,7 @@ export default function HorizontalTestimonials() {
           </div>
         </div>
 
-        {/* Row 2 — right */}
+        {/* Row 2 */}
         <div className="overflow-hidden">
           <div ref={row2Ref} className="flex will-change-transform">
             {ROW_2_ITEMS.map((item, i) => (

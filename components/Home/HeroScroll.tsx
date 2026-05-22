@@ -2,32 +2,8 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { details } from "../../constants/constant";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const HeroScroll = () => {
   const containerRef = useRef(null);
-
-  // useGSAP(() => {
-
-  //   const cards = gsap.utils.toArray(".card")
-
-  //   cards.forEach((card, index) => {
-  //     ScrollTrigger.create({
-  //       trigger : card,
-  //       start: "top top",
-  //       end: "+=500", // control how long it stays pinned
-  //       pin: true,
-  //       pinSpacing: false, // IMPORTANT for stacking effect
-  //       yoyo :true
-  //     })
-  //   })
-
-  // }, [])
-
   return (
     <div
       ref={containerRef}

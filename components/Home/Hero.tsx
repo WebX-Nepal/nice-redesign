@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
 import { Icon } from "@iconify/react";
 import ContainerWrapper from "../shared/ContainerWrapper";
 import VerticalImages from "./VerticalImages";
@@ -9,15 +7,13 @@ import Button from "../shared/Button";
 import { scrollToSection } from "@/lib/utils";
 import Typewriter from "../shared/TypeWriter";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const countries = ["UAE.", "Qatar.", "Saudi.", "Kuwait.", "Oman.", "Bahrain."];
 
 const stats = [
   { icon: "mdi:account-group", value: "2,000+", label: "Workers Deployed" },
   { icon: "mdi:earth", value: "7+", label: "Countries Served" },
   { icon: "mdi:shield-check", value: "Licensed", label: "Govt. Approved" },
-  { icon: "mdi:calendar-check", value: "20+", label: "Years of Experience" }
+  { icon: "mdi:calendar-check", value: "20+", label: "Years of Experience" },
 ];
 
 const Hero = () => {
@@ -27,6 +23,7 @@ const Hero = () => {
   const col2Ref = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Country rotation interval
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % countries.length);
@@ -34,53 +31,66 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Text fade animation on country change
   useEffect(() => {
     if (!textRef.current) return;
-    gsap.fromTo(
-      textRef.current,
-      { y: "20%", opacity: 0 },
-      { y: "0%", opacity: 1, duration: 1, ease: "power4.out" },
-    );
+    const run = async () => {
+      const gsap = (await import("gsap")).default;
+      gsap.fromTo(
+        textRef.current,
+        { y: "20%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 1, ease: "power4.out" }
+      );
+    };
+    run();
   }, [index]);
 
+  // Parallax scroll animation
   useEffect(() => {
-    if (!col1Ref.current && !col2Ref.current) return
-    const ctx = gsap.context(() => {
-      const shared = {
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.5,
-        },
-      };
-      gsap.to(col1Ref.current, { y: "-200px", ...shared });
-      gsap.to(col2Ref.current, { y: "200px", ...shared });
-    });
-    return () => ctx.revert();
+    if (!col1Ref.current && !col2Ref.current) return;
+    let ctx: { revert: () => void } | null = null;
+
+    const init = async () => {
+      const gsap = (await import("gsap")).default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        const shared = {
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.5,
+          },
+        };
+        gsap.to(col1Ref.current, { y: "-200px", ...shared });
+        gsap.to(col2Ref.current, { y: "200px", ...shared });
+      });
+    };
+
+    init();
+    return () => ctx?.revert();
   }, []);
 
   return (
     <ContainerWrapper className="flex items-center justify-center h-full w-full">
       <div
         ref={sectionRef}
-        className="mt-18.5 relative w-full h-[calc(100dvh-84px)] rounded-xl  pt-[1.5px]"
+        className="mt-18.5 relative w-full h-[calc(100dvh-84px)] rounded-xl pt-[1.5px]"
       >
-        {/* main box ko */}
-        <div className="relative w-full h-full rounded-xl  overflow-hidden">
+        <div className="relative w-full h-full rounded-xl overflow-hidden">
           <div className="flex flex-row h-full justify-between">
 
-            {/* left */}
+            {/* Left */}
             <div className="w-full md:w-[50%] flex flex-col gap-6 md:gap-10 justify-center h-full">
 
-              {/* Heading */}
               <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
                 Reliable Workforce <br />from Nepal to{" "}
                 <Typewriter className="text-[#2089CA]" words={["UAE.", "Qatar.", "Saudi.", "Kuwait.", "Oman.", "Bahrain."]} />
               </h1>
 
-              {/* Stats */}
               <div className="grid grid-cols-2 gap-2 w-full sm:w-fit items-center">
                 {stats.map((stat, i) => (
                   <div
@@ -96,14 +106,12 @@ const Hero = () => {
 
               <div className="w-full bg-gray-300 h-px" />
 
-              {/* Description */}
               <p className="text-sm md:text-base lg:text-lg text-zinc-500 leading-relaxed">
                 We connect skilled, verified Nepali workers with top employers
                 across the Gulf and beyond — handling everything from recruitment
                 to deployment.
               </p>
 
-              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
                 <Button
                   className="flex justify-center w-full sm:w-auto"
@@ -121,7 +129,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Right side ko */}
+            {/* Right */}
             <div className="hidden w-0 md:block md:w-[45%] h-full overflow-hidden relative -mt-2">
               <VerticalImages />
             </div>

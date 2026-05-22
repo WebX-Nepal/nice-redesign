@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import Image from "next/image";
 import { IMAGES } from "./ImagePlay";
 
@@ -11,43 +10,55 @@ export default function VerticalImages() {
   const col2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // col1
-      gsap.to(col1Ref.current, {
-        y: "-50%",
-        ease: "none",
-        duration: 80,
-        repeat: -1,
-      });
+    let ctx: { revert: () => void } | null = null;
 
-      // col2
-      gsap.fromTo(
-        col2Ref.current,
-        { y: "-50%" },
-        {
-          y: "0%",
+    const init = async () => {
+      const gsap = (await import("gsap")).default;
+
+      ctx = gsap.context(() => {
+        // col1
+        gsap.to(col1Ref.current, {
+          y: "-50%",
           ease: "none",
           duration: 80,
           repeat: -1,
-        }
-      );
-    });
+        });
 
-    return () => ctx.revert();
+        // col2
+        gsap.fromTo(
+          col2Ref.current,
+          { y: "-50%" },
+          {
+            y: "0%",
+            ease: "none",
+            duration: 80,
+            repeat: -1,
+          }
+        );
+      });
+    };
+
+    init();
+
+    return () => ctx?.revert();
   }, []);
 
   return (
     <div className="w-full h-full overflow-hidden relative">
       <div className="grid grid-cols-2 gap-2 h-full">
 
-        {/* cols1 */}
+        {/* col 1 */}
         <div className="overflow-hidden h-full">
           <div ref={col1Ref} className="flex flex-col gap-2">
             {TICKER_ITEMS.map((item, i) => (
               <div key={i} className="relative h-48 shrink-0 overflow-hidden rounded-xl">
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={item.src} fill className="object-cover brightness-80" alt={item.country} />
+                  src={item.src}
+                  fill
+                  className="object-cover brightness-80"
+                  alt={item.country}
+                />
                 <div className="absolute z-10 top-2 right-2 flex items-center gap-1.5 bg-black/40 border border-gray-600 backdrop-blur-sm rounded-full px-2 py-1">
                   <div className="h-3 w-5 relative">
                     <Image
@@ -65,14 +76,18 @@ export default function VerticalImages() {
           </div>
         </div>
 
-        {/* cols 2 */}
+        {/* col 2 */}
         <div className="overflow-hidden h-full">
           <div ref={col2Ref} className="flex flex-col gap-2">
             {[...TICKER_ITEMS].reverse().map((item, i) => (
               <div key={i} className="relative aspect-9/16 shrink-0 overflow-hidden rounded-xl">
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={item.src} fill className="object-cover brightness-80" alt={item.country} />
+                  src={item.src}
+                  fill
+                  className="object-cover brightness-80"
+                  alt={item.country}
+                />
                 <div className="absolute z-10 top-2 right-2 flex items-center gap-1.5 bg-black/40 border border-gray-600 backdrop-blur-sm rounded-full px-2 py-1">
                   <div className="h-3 w-5 relative">
                     <Image
@@ -92,7 +107,7 @@ export default function VerticalImages() {
 
       </div>
 
-      {/* Blur fade top ko */}
+      {/* Blur fade top */}
       <div
         className="backdrop-blur-sm absolute top-0 left-0 right-0 h-12 pointer-events-none z-10"
         style={{
@@ -101,7 +116,7 @@ export default function VerticalImages() {
         }}
       />
 
-      {/* blur fade bottom ko */}
+      {/* Blur fade bottom */}
       <div
         className="backdrop-blur-xl absolute bottom-0 left-0 right-0 h-18 pointer-events-none z-10"
         style={{
