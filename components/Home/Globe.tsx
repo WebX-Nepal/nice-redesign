@@ -3,6 +3,8 @@ import { WorldMap } from "@/components/ui/world-map";
 import { Icon } from "@iconify/react";
 import ContainerWrapper from "../shared/ContainerWrapper";
 import { IMAGES } from "../Home/ImagePlay";
+import Globe3DDemo from "../3d-globe-demo";
+import NepalGulfGlobe from "../3d-globe-demo";
 const flagMap = Object.fromEntries(IMAGES.map((img) => [img.country, img.flag]));
 const destinations = [
   { country: "UAE", icon: "twemoji:flag-united-arab-emirates" },
@@ -48,16 +50,8 @@ export function Globe() {
             </div>
 
           </div>
-          <WorldMap
-            dots={[
-              { start: NEPAL, end: { lat: 25.2048, lng: 55.2708, icon: flagMap["UAE"] } },
-              { start: NEPAL, end: { lat: 25.2854, lng: 51.531, icon: flagMap["Qatar"] } },
-              { start: NEPAL, end: { lat: 24.7136, lng: 46.6753, icon: flagMap["Saudi Arabia"] } },
-              { start: NEPAL, end: { lat: 29.3759, lng: 47.9774, icon: flagMap["Kuwait"] } },
-              { start: NEPAL, end: { lat: 23.5859, lng: 58.4059, icon: flagMap["Oman"] } },
-              { start: NEPAL, end: { lat: 26.2235, lng: 50.5876, icon: flagMap["Bahrain"] } },
-            ]}
-          />
+             <NepalGulfGlobe/>
+
         </div>
 
 
