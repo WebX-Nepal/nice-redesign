@@ -5,12 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-  @apply bg-white font-[var(--font-inter)];
+  @apply bg-white font-[var(--font-fustat)];
 }
 
 @theme inline{
   --font-sans : var(--font-inter);
   --font-inter : var(--font-inter);
+  --font-fustat:var(--font-fustat);
   --font-playfair : var(--font-playfair);
   --animate-marquee : marquee var(--duration) linear infinite;
   --color-muted-foreground : var(----muted-foreground);
@@ -81,8 +82,9 @@ body {
   --foreground : hsl(240 10% 3.9%);
   --brand : hsl(266 100% 50%);
   --brand-foreground : hsl(270 100% 98%);
-  --muted : hsl(240 4.8% 95.9%);
+--muted : hsl(240 4.8% 95.9%);
   --muted-foreground : hsl(240 3.8% 46.1%);
+
 }
 
 .dark {
@@ -92,4 +94,9 @@ body {
   --brand-foreground : hsl(270 100% 98%);
   --muted : hsl(240 3.7% 15.9%);
   --muted-foreground : hsl(240 5% 64.9%);
+}
+
+html{
+  scroll-behavior: smooth;
+
 }

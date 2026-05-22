@@ -1,0 +1,190 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import Image from "next/image";
+import { Github, Twitter, Youtube, Linkedin } from "lucide-react";
+
+interface Testimonial {
+  name: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Michael Chen",
+    title: "Senior Software Engineer, Cloud Infrastructure",
+    description:
+      "Working with this team completely changed our infrastructure game. They delivered beyond our expectations and helped us scale to millions of users.",
+    imageUrl:
+      "https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Jessica Roberts",
+    title: "Lead Data Scientist, InsightX",
+    description:
+      "The analytics platform they built gave our team the confidence for true data-driven decisions. Their dashboarding capabilities went above and beyond.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    name: "William Carter",
+    title: "VP Product, NovaLabs",
+    description:
+      "Their engineering team exceeded every delivery milestone and provided exceptional technical leadership throughout the entire project.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    name: "Sarah Kim",
+    title: "CTO, Buildify",
+    description:
+      "Incredible attention to detail and a team that truly cares about outcomes. Our product went from MVP to production in record time.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    name: "Omar Hassan",
+    title: "Engineering Manager, Fincorp",
+    description:
+      "The best technical partners we've worked with. They brought structure, speed, and creativity to every sprint.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    name: "Priya Nair",
+    title: "Head of Design, Luminary",
+    description:
+      "They understood our vision immediately and translated it into something even better than we imagined. Truly a world-class team.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80",
+  },
+];
+
+// Duplicate for seamless loop
+const ROW_1 = [...testimonials, ...testimonials, ...testimonials];
+const ROW_2 = [...testimonials].reverse();
+const ROW_2_ITEMS = [...ROW_2, ...ROW_2, ...ROW_2];
+
+function TestimonialCard({ item }: { item: Testimonial }) {
+  return (
+    <div className="border border-gray-300 hover:border-[#2089CA]/40 shrink-0 w-[320px]  bg-[#F3F3F4] hover:bg-[#EEF6FC]  rounded-xl p-4 flex flex-col gap-4 mx-2">
+      <div className="flex items-center gap-3">
+        <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 bg-zinc-200">
+          <Image
+            src={item.imageUrl}
+            alt={item.name}
+            width={44}
+            height={44}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="min-w-0">
+          <p className="font-semibold text-sm text-zinc-900 truncate">{item.name}</p>
+          <p className="text-xs text-zinc-500 truncate">{item.title}</p>
+        </div>
+      </div>
+
+      {/* Stars */}
+      <div className="flex gap-0.5">
+        {[...Array(5)].map((_, i) => (
+          <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.062 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.287-3.957z" />
+          </svg>
+        ))}
+      </div>
+
+      <p className="text-xs text-zinc-600 leading-relaxed line-clamp-3">{item.description}</p>
+
+      {/* Social icons */}
+      <div className="flex gap-2 mt-auto">
+        {[Github, Twitter, Linkedin].map((Icon, i) => (
+          <div
+            key={i}
+            className="w-7 h-7 rounded-full bg-[#2089CA]/10 flex items-center justify-center"
+          >
+            <Icon className="w-3.5 h-3.5 text-[#2089CA]" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function HorizontalTestimonials() {
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row2Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Row 1 — scrolls left
+      gsap.to(row1Ref.current, {
+        x: "-33.333%",
+        ease: "none",
+        duration: 50,
+        repeat: -1,
+      });
+
+      // Row 2 — scrolls right (starts offset)
+      gsap.fromTo(
+        row2Ref.current,
+        { x: "-33.333%" },
+        {
+          x: "0%",
+          ease: "none",
+          duration: 40,
+          repeat: -1,
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section>
+      <div className="flex flex-col gap-4 relative">
+
+        {/* Left fade */}
+        <div
+          className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10"
+          style={{
+            maskImage: "linear-gradient(to right, black 0%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, black 0%, transparent 100%)",
+            backdropFilter: "blur(2px)",
+          }}
+        />
+
+        {/* Right fade */}
+        <div
+          className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10"
+          style={{
+            maskImage: "linear-gradient(to left, black 0%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 100%)",
+            backdropFilter: "blur(2px)",
+          }}
+        />
+
+        {/* Row 1 — left */}
+        <div className="overflow-hidden">
+          <div ref={row1Ref} className="flex will-change-transform">
+            {ROW_1.map((item, i) => (
+              <TestimonialCard key={i} item={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — right */}
+        <div className="overflow-hidden">
+          <div ref={row2Ref} className="flex will-change-transform">
+            {ROW_2_ITEMS.map((item, i) => (
+              <TestimonialCard key={i} item={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

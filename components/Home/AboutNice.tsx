@@ -2,12 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 
-const stats = [
-  { value: "20+", label: "Years of Experience", icon: "mdi:calendar-check" },
-  { value: "2,000+", label: "Workers Deployed", icon: "mdi:account-group" },
-  { value: "7+", label: "Gulf Countries", icon: "mdi:earth" },
-  { value: "100%", label: "Govt. Licensed", icon: "mdi:shield-check" },
-];
+import Button from "../shared/Button";
+import ContainerWrapper from "../shared/ContainerWrapper";
+import Badge from "./shared/Badge";
 
 const highlights = [
   "Government-licensed recruitment agency based in Nepal",
@@ -18,72 +15,77 @@ const highlights = [
 
 export default function AboutNice() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — image collage */}
-          <div className="relative grid grid-cols-2 gap-4 h-[540px]">
-            {/* Main tall image */}
-            <div className="relative row-span-2 rounded-2xl overflow-hidden">
+    <section className="py-24">
+      <ContainerWrapper className="h-fit">
+
+        {/* Main layout */}
+        <div className="flex flex-col lg:flex-row gap-24 lg:gap-0 items-center justify-between">
+
+          {/* LEFT IMAGES */}
+          <div className="relative w-full order-2 lg:order-1 md:w-[50%] flex flex-col md:flex-row gap-4 md:h-135">
+
+            {/* Left large image — full width on mobile, flex-1 on desktop */}
+            <div className="relative w-full md:flex-1 h-70 md:h-auto rounded-xl overflow-hidden">
               <Image
-                src="/office/about_girl.jpg"
+                src="/nepali-lady.png"
                 alt="Nice Manpower team"
                 fill
-                className="object-cover"
-              />
-            </div>
-            {/* Top right */}
-            <div className="relative rounded-2xl overflow-hidden">
-              <Image
-                src="/office/nepal.jpg"
-                alt="Nepal office"
-                fill
-                className="object-cover"
-              />
-            </div>
-            {/* Bottom right */}
-            <div className="relative rounded-2xl overflow-hidden">
-              <Image
-                src="/office/dubai.jpg"
-                alt="Dubai office"
-                fill
-                className="object-cover"
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover brightness-90"
               />
             </div>
 
-            {/* Floating stat card */}
-            <div className="absolute -bottom-6 -right-6 bg-[#2089CA] text-white rounded-2xl px-6 py-5 shadow-xl z-10">
-              <p className="text-3xl font-bold">20+</p>
-              <p className="text-blue-100 text-sm mt-0.5">
-                Years Serving the Gulf
-              </p>
+            {/* Right stacked images — 2x2 grid on mobile, vertical stack on desktop */}
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:w-[48%]">
+              <div className="relative h-40 md:h-auto md:flex-1 rounded-xl overflow-hidden">
+                <Image
+                  src="/About/nice-building.webp"
+                  alt="Nepal office"
+                  fill
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover brightness-90"
+                />
+              </div>
+              <div className="relative h-40 md:h-auto md:flex-1 rounded-xl overflow-hidden">
+                <Image
+                  src="/About/dubai.png"
+                  alt="Dubai office"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="brightness-90 object-cover"
+                />
+              </div>
             </div>
 
             {/* Floating badge */}
-            <div className="absolute top-4 -left-4 bg-white border border-zinc-100 rounded-xl px-4 py-3 shadow-lg z-10 flex items-center gap-2">
-              <Icon
-                icon="mdi:shield-check"
-                className="text-green-500"
-                width="20"
-              />
-              <span className="text-sm font-semibold text-zinc-800">
-                Govt. Licensed
-              </span>
+            <div className="absolute -top-8 md:-top-12 -left-3 md:-left-6 w-24 h-24 md:w-32 md:h-32 bg-[#2089CA] border-2 border-white text-white rounded-full shadow-xl z-10 flex flex-col items-center justify-center text-center">
+              <p className="text-2xl md:text-3xl font-bold leading-none">20+</p>
+              <p className="text-blue-100 text-xs md:text-sm mt-1 leading-tight">
+                Years Serving<br />the Gulf
+              </p>
             </div>
           </div>
 
-          {/* Right — content */}
-          <div className="flex flex-col gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-2 rounded-full w-fit">
-                <Icon icon="mdi:information-outline" width="16" />
-                About Us
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight">
-                Build Your Workforce <br className="hidden md:block" />
-                with <span className="text-[#2089CA]">Confidence</span>
+          {/* RIGHT CONTENT */}
+          <div className="order-1 lg:order-2 flex w-full lg:w-[45%] flex-col gap-10">
+
+            {/* heading */}
+            <div className="flex flex-col gap-4 w-[90%]">
+              <Badge
+                icon="mdi:information-outline"
+                label="About Us"
+              />
+
+              <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+                Build Your Workforce
+                <br className="hidden md:block" />
+                with{" "}
+                <span className="text-[#2089CA]">
+                  Confidence.
+                </span>
               </h2>
-              <p className="text-zinc-500 text-base md:text-lg leading-relaxed">
+
+              <p className="text-base md:text-lg text-zinc-500 leading-relaxed">
                 With over two decades of experience in international
                 recruitment, Nice Recruiting Agency delivers qualified,
                 dependable workforce solutions to companies across the Gulf
@@ -96,7 +98,7 @@ export default function AboutNice() {
               {highlights.map((h, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-3 text-zinc-700 text-base"
+                  className="flex items-center gap-3 text-zinc-500 text-base"
                 >
                   <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
                     <Icon
@@ -105,48 +107,32 @@ export default function AboutNice() {
                       className="text-[#2089CA]"
                     />
                   </span>
+
                   {h}
                 </li>
               ))}
             </ul>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-3 bg-zinc-50 rounded-xl p-4 border border-zinc-100"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                    <Icon icon={s.icon} width="20" className="text-[#2089CA]" />
-                  </div>
-                  <div>
-                    <p className="text-xl font-bold text-zinc-900">{s.value}</p>
-                    <p className="text-xs text-zinc-500">{s.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTAs */}
+            {/* Buttons */}
             <div className="flex flex-wrap gap-4 pt-1">
-              <Link
+
+              <Button
+                icon="mdi:arrow-right"
+                label="Hire Now"
                 href="/contact"
-                className="flex items-center gap-2 bg-[#2089CA] text-white font-semibold px-7 py-3.5 rounded-full hover:bg-[#1a70a8] transition-colors duration-200"
-              >
-                Hire Now
-                <Icon icon="mdi:arrow-right" width="18" />
-              </Link>
+              />
+
               <Link
                 href="/about"
-                className="flex items-center gap-2 border border-zinc-200 text-zinc-700 font-semibold px-7 py-3.5 rounded-full hover:bg-zinc-50 transition-colors duration-200"
+                className="flex px-6 py-2.5 h-12 items-center gap-3 border border-zinc-200 text-zinc-900 font-semibold rounded-full hover:bg-zinc-50 transition-colors duration-200"
               >
+                <Icon icon="mdi:book-open-variant" width="18" />
                 Learn More
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </ContainerWrapper>
     </section>
   );
 }

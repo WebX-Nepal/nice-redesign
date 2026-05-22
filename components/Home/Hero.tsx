@@ -1,144 +1,134 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import ImagePlay from "./ImagePlay";
 import { Icon } from "@iconify/react";
+import ContainerWrapper from "../shared/ContainerWrapper";
+import VerticalImages from "./VerticalImages";
+import Button from "../shared/Button";
+import { scrollToSection } from "@/lib/utils";
+import Typewriter from "../shared/TypeWriter";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const countries = ["UAE", "Qatar", "Saudi", "Kuwait", "Oman", "Bahrain"];
+const countries = ["UAE.", "Qatar.", "Saudi.", "Kuwait.", "Oman.", "Bahrain."];
 
 const stats = [
   { icon: "mdi:account-group", value: "2,000+", label: "Workers Deployed" },
   { icon: "mdi:earth", value: "7+", label: "Countries Served" },
   { icon: "mdi:shield-check", value: "Licensed", label: "Govt. Approved" },
+  { icon: "mdi:calendar-check", value: "20+", label: "Years of Experience" }
 ];
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const textRef = useRef<HTMLSpanElement>(null);
+  const col1Ref = useRef<HTMLDivElement>(null);
+  const col2Ref = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % countries.length);
-    }, 2000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
+    if (!textRef.current) return;
     gsap.fromTo(
       textRef.current,
-      { y: "100%", opacity: 0 },
+      { y: "20%", opacity: 0 },
       { y: "0%", opacity: 1, duration: 1, ease: "power4.out" },
     );
   }, [index]);
 
+  useEffect(() => {
+    if (!col1Ref.current && !col2Ref.current) return
+    const ctx = gsap.context(() => {
+      const shared = {
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.5,
+        },
+      };
+      gsap.to(col1Ref.current, { y: "-200px", ...shared });
+      gsap.to(col2Ref.current, { y: "200px", ...shared });
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="min-h-screen max-w-7xl mx-auto px-4 md:px-8 lg:px-0 flex items-center pt-16">
-      <div className="w-full flex flex-col lg:flex-row gap-12 xl:gap-20 items-center py-12">
-        {/* Left Content */}
-        <div className="w-full lg:w-1/2 flex flex-col gap-6">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-1.5 rounded-full w-fit">
-            <span className="w-2 h-2 rounded-full bg-[#2089CA] animate-pulse" />
-            Trusted Manpower Recruitment Agency
-          </div>
+    <ContainerWrapper className="flex items-center justify-center h-full w-full">
+      <div
+        ref={sectionRef}
+        className="mt-18.5 relative w-full h-[calc(100dvh-84px)] rounded-xl  pt-[1.5px]"
+      >
+        {/* main box ko */}
+        <div className="relative w-full h-full rounded-xl  overflow-hidden">
+          <div className="flex flex-row h-full justify-between">
 
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl xl:text-[3.4rem] font-bold leading-[1.15] tracking-tight text-zinc-900">
-            Reliable Workforce <br className="hidden md:block" />
-            from Nepal to{" "}
-            <span className="inline-block h-[1.2em] overflow-hidden align-bottom">
-              <span ref={textRef} className="inline-block text-[#2089CA]">
-                {countries[index]}
-              </span>
-            </span>
-          </h1>
+            {/* left */}
+            <div className="w-full md:w-[50%] flex flex-col gap-6 md:gap-10 justify-center h-full">
 
-          {/* Subtext */}
-          <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-lg">
-            We connect skilled, verified Nepali workers with top employers
-            across the Gulf and beyond — handling everything from recruitment to
-            deployment.
-          </p>
+              {/* Heading */}
+              <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+                Reliable Workforce <br />from Nepal to{" "}
+                <Typewriter className="text-[#2089CA]" words={["UAE.", "Qatar.", "Saudi.", "Kuwait.", "Oman.", "Bahrain."]} />
+              </h1>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 mt-2">
-            <Link
-              href="/contact"
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-[#2089CA] rounded-full hover:bg-[#1a70a8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Request Manpower
-            </Link>
-            <a
-              href="#process"
-              className="flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-zinc-700 border border-zinc-200 rounded-full hover:bg-zinc-50 transition-colors duration-200"
-            >
-              <Icon icon="mdi:play-circle-outline" width="18" />
-              View Our Process
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div className="flex flex-wrap gap-6 mt-4 pt-6 border-t border-zinc-100">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                  <Icon
-                    icon={stat.icon}
-                    width="20"
-                    className="text-[#2089CA]"
-                  />
-                </div>
-                <div>
-                  <p className="text-base font-bold text-zinc-900 leading-tight">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs text-zinc-500">{stat.label}</p>
-                </div>
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-2 w-full sm:w-fit items-center">
+                {stats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full py-1.5 px-3 min-w-0"
+                  >
+                    <Icon icon={stat.icon} width="15" className="text-[#2089CA] shrink-0" />
+                    <span className="text-xs font-bold text-[#2089CA] shrink-0">{stat.value}</span>
+                    <span className="text-xs text-zinc-500 truncate">{stat.label}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Right — Image */}
-        <div className="w-full lg:w-1/2 h-[420px] md:h-[520px] relative">
-          {/* Decorative blobs */}
-          <div className="absolute -top-6 -right-6 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-40 pointer-events-none" />
-          <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-orange-100 rounded-full blur-3xl opacity-40 pointer-events-none" />
+              <div className="w-full bg-gray-300 h-px" />
 
-          <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-zinc-200">
-            <ImagePlay index={index} />
+              {/* Description */}
+              <p className="text-sm md:text-base lg:text-lg text-zinc-500 leading-relaxed">
+                We connect skilled, verified Nepali workers with top employers
+                across the Gulf and beyond — handling everything from recruitment
+                to deployment.
+              </p>
 
-            {/* Country label overlay */}
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-              <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-sm flex items-center gap-2">
-                <Icon
-                  icon="mdi:map-marker"
-                  className="text-[#2089CA]"
-                  width="16"
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
+                <Button
+                  className="flex justify-center w-full sm:w-auto"
+                  href="/contact"
+                  icon="mdi:account-group"
+                  label="Request Manpower"
                 />
-                <span className="text-sm font-semibold text-zinc-800">
-                  {countries[index]}
-                </span>
+                <button
+                  onClick={() => scrollToSection("process")}
+                  className="flex w-full sm:w-auto justify-center items-center bg-white gap-2 cursor-pointer px-4 md:px-6 py-2.5 text-sm md:text-base h-11 md:h-12 font-semibold text-zinc-900 border border-zinc-200 rounded-full hover:bg-zinc-50 transition-colors duration-200"
+                >
+                  <Icon icon="mdi:chevron-down" width="18" />
+                  View Our Process
+                </button>
               </div>
-              <div className="bg-white/90 backdrop-blur-sm px-3 py-2 rounded-xl shadow-sm flex items-center gap-1.5">
-                <Icon
-                  icon="mdi:check-decagram"
-                  className="text-green-500"
-                  width="16"
-                />
-                <span className="text-xs font-medium text-zinc-700">
-                  Verified Placements
-                </span>
-              </div>
+            </div>
+
+            {/* Right side ko */}
+            <div className="hidden w-0 md:block md:w-[45%] h-full overflow-hidden relative -mt-2">
+              <VerticalImages />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </ContainerWrapper>
   );
 };
 

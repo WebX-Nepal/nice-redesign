@@ -16,11 +16,6 @@ export const navbar = [
     title: "Our Talents",
   },
   {
-    id: 6,
-    href: "/contact",
-    title: "Contact",
-  },
-  {
     id: 3,
     href: "/services",
     title: "Services",
@@ -29,6 +24,11 @@ export const navbar = [
     id: 4,
     href: "/blogs",
     title: "Blogs",
+  },
+    {
+    id: 6,
+    href: "/contact",
+    title: "Contact",
   },
 ];
 
@@ -289,22 +289,22 @@ export const specializationDetails = [
 export const cards = [
   {
     title: "Verified & Skilled Workers Only",
-    img: "/ChooseUs/verified.jpg",
+    img: "/skill.jpg",
     icon: "bitcoin-icons:verify-filled"
   },
   {
     title: "Fast Deployment Process",
-    img: "/ChooseUs/deployment.jpg",
+    img: "/dep.jpg",
     icon: "mdi:run-fast"
   },
   {
     title: "Legal & Government Approved",
-    img: "/ChooseUs/legal.jpg",
+    img: "/law.jpg",
     icon: "mdi:legal"
   },
   {
-    title: "End-to-End Recruitment Handling",
-    img: "/ChooseUs/recruitment.jpg",
+    title: "End-to-End Recruitment",
+    img: "/recruit.jpg",
     icon: "fluent-mdl2:recruitment-management"
   },
 ];

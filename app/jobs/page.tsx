@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Categories from "@/components/Jobs/Categories";
 import ChooseUs from "@/components/Jobs/ChooseUs";
 import Hero from "@/components/Jobs/Hero";
+import TrainingSection from "@/components/Jobs/Training";
 
 export const metadata: Metadata = {
   title: "Our Talents | Nice Recruiting Agency",
@@ -12,9 +13,9 @@ export const metadata: Metadata = {
 export default function Jobs() {
   return (
     <div>
-      <Hero />
       <ChooseUs />
       <Categories />
+      <TrainingSection/>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Blogs from "@/components/Blogs/Blogs";
-import Hero from "@/components/Blogs/Hero";
 
 export const metadata: Metadata = {
   title: "Blog | Nice Recruiting Agency",
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function BlogsPage() {
   return (
     <div>
-      <Hero />
+      {/* <Hero /> */}
       <Blogs />
     </div>
   );

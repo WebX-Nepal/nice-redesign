@@ -39,7 +39,7 @@ export default async function BlogPost({
   const paragraphs = blog.content.split("\n\n");
 
   return (
-    <main className="bg-white pt-16">
+    <main className="bg-white pt-16 font-fustat">
       {/* Hero */}
       <div className="relative w-full h-[55vh] min-h-[380px]">
         <Image
@@ -178,26 +178,26 @@ export default async function BlogPost({
           {/* Sidebar */}
           <aside className="flex flex-col gap-8">
             {/* CTA card */}
-            <div className="bg-zinc-950 rounded-2xl p-7 flex flex-col gap-5">
+            <div className="bg-linear-to-b from-[#037ecb]  to-[#2089CA] rounded-xl p-7 flex flex-col gap-5">
               <div className="w-12 h-12 rounded-xl bg-[#2089CA]/20 border border-[#2089CA]/30 flex items-center justify-center">
                 <Icon
                   icon="mdi:account-group-outline"
                   width="22"
-                  className="text-[#2089CA]"
+                  className="text-white"
                 />
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg">
                   Need Skilled Workers?
                 </h3>
-                <p className="text-zinc-400 text-sm mt-2 leading-relaxed">
+                <p className="text-gray-100 text-sm mt-2 leading-relaxed">
                   We supply trained, verified Nepali workers to Gulf employers —
                   fast and hassle-free.
                 </p>
               </div>
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2 bg-[#2089CA] text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#1a70a8] transition-colors duration-200 text-sm"
+                className="flex items-center justify-center gap-2 bg-white text-zinc-900 hover:bg-gray-100 font-semibold px-5 py-3 rounded-xl hover:bg-[#1a70a8] transition-colors duration-200 text-sm"
               >
                 Request Manpower
                 <Icon icon="mdi:arrow-right" width="15" />

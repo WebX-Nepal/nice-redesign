@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import ContainerWrapper from "../shared/ContainerWrapper";
+import Button from "../shared/Button";
+import MilestoneTimeline from "./MileStone";
+import Badge from "../Home/shared/Badge";
 
 const milestones = [
   { year: "2005", label: "Founded in Kathmandu, Nepal" },
@@ -10,11 +14,36 @@ const milestones = [
 
 const OurStory = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left image */}
-          <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-xl">
+    <section className="py-24 font-fustat">
+      <ContainerWrapper className="h-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+          <div className="flex flex-col gap-10 items-start justify-start w-full ">
+            <div className="flex flex-col gap-4">
+              <Badge 
+              icon="mdi:book-open-outline"
+              label="Our Story"
+              />
+              <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+                Two Decades of <br/><span className="text-[#2089CA]">
+                  Bridging Talent.
+                </span>
+              </h2>
+
+              <p className="text-zinc-500 text-base md:text-lg leading-relaxed ">
+                Founded in 2005, Nice Manpower Recruitment Agency connects skilled workers from Nepal with trusted job opportunities in the Gulf. Over the years, we have helped thousands of people find employment while building strong relationships with companies through trust, quality, and transparency.
+
+              </p>
+              <Button
+                icon="mdi:arrow-right"
+                label="Hire Now"
+                href="/contact"
+                className="w-fit"
+              />
+            </div>
+
+
+          </div>
+          <div className="relative h-100 rounded-xl overflow-hidden shadow-xl">
             <Image
               src="/About/nice-building.webp"
               alt="Our Story"
@@ -29,53 +58,9 @@ const OurStory = () => {
               </p>
             </div>
           </div>
-
-          {/* Right content */}
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-2 rounded-full w-fit">
-                <Icon icon="mdi:book-open-outline" width="16" />
-                Our Story
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight">
-                Two Decades of{" "}
-                <span className="text-[#2089CA]">Bridging Talent</span>
-              </h2>
-              <p className="text-zinc-500 text-base md:text-lg leading-relaxed">
-                Founded in 2005, Nice Manpower Recruitment Agency was born from
-                a simple mission — bridge the gap between skilled professionals
-                in Nepal and the growing demand for quality manpower in the
-                Gulf.
-              </p>
-              <p className="text-zinc-500 text-base leading-relaxed">
-                From humble beginnings, we grew into a reliable partner for both
-                job seekers and Gulf-based companies, facilitating thousands of
-                successful placements and building lasting relationships built
-                on trust and transparency.
-              </p>
-            </div>
-
-            {/* Milestones */}
-            <div className="grid grid-cols-2 gap-4">
-              {milestones.map((m) => (
-                <div
-                  key={m.year}
-                  className="flex items-center gap-3 bg-zinc-50 border border-zinc-100 rounded-xl p-4"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-[#2089CA] flex items-center justify-center shrink-0">
-                    <span className="text-white text-xs font-bold">
-                      {m.year}
-                    </span>
-                  </div>
-                  <p className="text-zinc-700 text-sm font-medium leading-snug">
-                    {m.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
+        <MilestoneTimeline />
+      </ContainerWrapper>
     </section>
   );
 };

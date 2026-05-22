@@ -7,10 +7,9 @@ import Testimonials from "@/components/Home/Testimonials";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import Main from "../components/Home/Main";
 import Outlets from "@/components/Home/Outlets";
-
 export default function Home() {
   return (
-    <div>
+    <div className="font-fustat">
       <Hero />
       <AboutNice />
       <WhyChooseUs />

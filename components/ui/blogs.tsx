@@ -2,32 +2,34 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 import { blogs } from "@/lib/blogs";
+import ContainerWrapper from "../shared/ContainerWrapper";
+import Badge from "../Home/shared/Badge";
 
 export default function BlogsGrid() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
+    <section className="py-24 bg-white font-fustat">
+      <ContainerWrapper className="h-fit">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-4">
-            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2089CA] text-sm font-semibold px-4 py-2 rounded-full w-fit">
-              <Icon icon="mdi:newspaper-variant-outline" width="16" />
-              Blog Articles
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 leading-tight">
-              Latest <span className="text-[#2089CA]">Insights</span>
+            <Badge
+              icon={"mdi:newspaper-variant-outline"}
+              label="Blog Articles"
+            />
+            <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+              Latest <span className="text-[#2089CA]">
+                Insights.
+              </span>
             </h2>
-            <p className="text-zinc-500 max-w-lg text-base md:text-lg leading-relaxed">
+            <p className="text-zinc-500 text-base md:text-lg leading-relaxed ">
               Industry tips, recruitment guides, and workforce insights from our
               team.
             </p>
           </div>
-        </div>
-
-        {/* Featured post — first blog */}
+                  {/* Featured post — first blog */}
         <Link
           href={`/blogs/${blogs[0].slug}`}
-          className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-10"
+          className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg transition-shadow duration-300 mb-10"
         >
           <div className="relative h-72 lg:h-auto overflow-hidden">
             <Image
@@ -78,7 +80,7 @@ export default function BlogsGrid() {
             <Link
               key={article.slug}
               href={`/blogs/${article.slug}`}
-              className="group bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-xl border border-zinc-100 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col"
             >
               {/* Image */}
               <div className="relative h-52 overflow-hidden">
@@ -130,7 +132,10 @@ export default function BlogsGrid() {
             </Link>
           ))}
         </div>
-      </div>
+        </div>
+
+
+      </ContainerWrapper>
     </section>
   );
 }

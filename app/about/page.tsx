@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div>
-      <AboutUs />
+      {/* <AboutUs /> */}
       <OurStory />
       <MissionAndVision />
       <Trust />
