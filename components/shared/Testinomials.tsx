@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import { Github, Twitter, Linkedin } from "lucide-react";
 
 interface Testimonial {
@@ -68,40 +69,57 @@ const ROW_2_ITEMS = [...ROW_2, ...ROW_2, ...ROW_2];
 
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <div className="border border-gray-300 hover:border-[#2089CA]/40 shrink-0 w-[320px] bg-[#F3F3F4] hover:bg-[#EEF6FC] rounded-xl p-4 flex flex-col gap-4 mx-2">
+    <div className="mx-2 flex w-[320px] shrink-0 flex-col gap-4 rounded-xl border border-gray-300 bg-[#F3F3F4] p-4 transition-all duration-300 hover:border-[#2089CA]/40 hover:bg-[#EEF6FC]">
+      {/* Header */}
       <div className="flex items-center gap-3">
-        <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 bg-zinc-200">
+        <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full bg-zinc-200">
           <Image
             src={item.imageUrl}
             alt={item.name}
             width={44}
             height={44}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
+
         <div className="min-w-0">
-          <p className="font-semibold text-sm text-zinc-900 truncate">{item.name}</p>
-          <p className="text-xs text-zinc-500 truncate">{item.title}</p>
+          <p className="truncate text-sm font-semibold text-zinc-900">
+            {item.name}
+          </p>
+
+          <p className="truncate text-xs text-zinc-500">
+            {item.title}
+          </p>
         </div>
       </div>
 
+      {/* Stars */}
       <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (
-          <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg
+            key={i}
+            className="h-3.5 w-3.5 text-yellow-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.062 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.287-3.957z" />
           </svg>
         ))}
       </div>
 
-      <p className="text-xs text-zinc-600 leading-relaxed line-clamp-3">{item.description}</p>
+      {/* Description */}
+      <p className="line-clamp-3 text-xs leading-relaxed text-zinc-600">
+        {item.description}
+      </p>
 
-      <div className="flex gap-2 mt-auto">
+      {/* Socials */}
+      <div className="mt-auto flex gap-2">
         {[Github, Twitter, Linkedin].map((Icon, i) => (
           <div
             key={i}
-            className="w-7 h-7 rounded-full bg-[#2089CA]/10 flex items-center justify-center"
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-[#2089CA]/10"
           >
-            <Icon className="w-3.5 h-3.5 text-[#2089CA]" />
+            <Icon className="h-3.5 w-3.5 text-[#2089CA]" />
           </div>
         ))}
       </div>
@@ -114,58 +132,56 @@ export default function HorizontalTestimonials() {
   const row2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx: { revert: () => void } | null = null;
-
-    const init = async () => {
-      const gsap = (await import("gsap")).default;
-
-      ctx = gsap.context(() => {
-        gsap.to(row1Ref.current, {
-          x: "-33.333%",
-          ease: "none",
-          duration: 50,
-          repeat: -1,
-        });
-
-        gsap.fromTo(
-          row2Ref.current,
-          { x: "-33.333%" },
-          {
-            x: "0%",
-            ease: "none",
-            duration: 40,
-            repeat: -1,
-          }
-        );
+    const ctx = gsap.context(() => {
+      // Top Row
+      gsap.to(row1Ref.current, {
+        x: "-33.333%",
+        ease: "none",
+        duration: 50,
+        repeat: -1,
       });
-    };
 
-    init();
+      // Bottom Row
+      gsap.fromTo(
+        row2Ref.current,
+        {
+          x: "-33.333%",
+        },
+        {
+          x: "0%",
+          ease: "none",
+          duration: 40,
+          repeat: -1,
+        }
+      );
+    });
 
-    return () => ctx?.revert();
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section>
-      <div className="flex flex-col gap-4 relative">
-
-        {/* Left fade */}
+    <section className="relative overflow-hidden">
+      <div className="relative flex flex-col gap-4">
+        
+        {/* Left Fade */}
         <div
-          className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10"
+          className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 backdrop-blur-[2px]"
           style={{
-            maskImage: "linear-gradient(to right, black 0%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to right, black 0%, transparent 100%)",
-            backdropFilter: "blur(2px)",
+            maskImage:
+              "linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0))",
+            WebkitMaskImage:
+              "linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0))",
           }}
         />
 
-        {/* Right fade */}
+        {/* Right Fade */}
         <div
-          className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10"
+          className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 backdrop-blur-[2px]"
           style={{
-            maskImage: "linear-gradient(to left, black 0%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 100%)",
-            backdropFilter: "blur(2px)",
+            maskImage:
+              "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0))",
+            WebkitMaskImage:
+              "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0))",
           }}
         />
 
