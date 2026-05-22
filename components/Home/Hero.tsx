@@ -127,9 +127,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
                 Reliable Workforce <br />
                 from Nepal to{" "}
-                <span ref={textRef} className="inline-block text-[#2089CA]">
-                  {countries[index]}
-                </span>
+                <Typewriter className="text-[#2089CA]" words={countries}/>
               </h1>
 
               <div className="grid grid-cols-2 gap-2 w-full sm:w-fit items-center">
