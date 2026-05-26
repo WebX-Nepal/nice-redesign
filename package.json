@@ -2,12 +2,12 @@
   "name": "nicemanpower",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start - 1908",
-    "lint": "eslint"
-  },
+ "scripts": {
+  "dev": "next dev -p 1908",
+  "build": "next build",
+  "start": "next start -p 1908",
+  "lint": "eslint"
+},
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@iconify/react": "^6.0.2",
