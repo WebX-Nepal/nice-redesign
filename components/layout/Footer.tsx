@@ -94,13 +94,14 @@ const Footer = () => {
                 </div>
               </a>
 
-              <a href="tel:+9779706414359" className="flex items-start gap-3 group">
+              <a href="tel:+9779706414359" className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/40 transition-colors duration-200">
                   <Icon icon="mdi:phone-outline" width="16" className="text-white" />
                 </div>
                 <div>
                   <p className="text-white/50 text-xs">Phone</p>
-                  <p className="text-white/80 text-sm group-hover:text-white transition-colors">+977 970-6414359</p>
+                  <p className="text-white/80 text-sm group-hover:text-white transition-colors">+977 970-6414359,</p>
+                  <p className="text-white/80 text-sm group-hover:text-white transition-colors">+977 970-4804825</p>
                 </div>
               </a>
 

@@ -13,6 +13,8 @@ const destinations = [
   { country: "Kuwait", icon: "twemoji:flag-kuwait" },
   { country: "Oman", icon: "twemoji:flag-oman" },
   { country: "Bahrain", icon: "twemoji:flag-bahrain" },
+  { country: "Malaysia", icon: "twemoji:flag-malaysia" },
+  { country: "Other countries", icon: "mdi:globe" },
 ];
 
 // Nepal → Gulf countries (real coordinates)

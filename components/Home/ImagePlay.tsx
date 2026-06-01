@@ -32,6 +32,11 @@ export const IMAGES = [
     country: "Bahrain",
     flag: "/flags/bahrain.png",
   },
+  {
+    src: "/hero/imageplay/malaysia.jpg",
+    country: "Malaysia",
+    flag: "/flags/malaysia-flag.jpg",
+  },
 ];
 
 export type ImageItem = (typeof IMAGES)[number];
