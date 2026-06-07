@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.nicerecruitment.org/jobs",
+    canonical: "https://nicerecruitment.org/jobs",
   },
 
   openGraph: {
     title: "Overseas Job Vacancies | Nice Recruitment Agency",
     description:
       "Browse overseas job vacancies and employment opportunities with trusted international employers through Nice Recruitment Agency.",
-    url: "https://www.nicerecruitment.org/jobs",
+    url: "https://nicerecruitment.org/jobs",
     siteName: "Nice Recruitment Agency",
     images: [
       {
-        url: "https://www.nicerecruitment.org/og/jobs.png",
+        url: "https://nicerecruitment.org/og/jobs.png",
         width: 1200,
         height: 630,
         alt: "Overseas Job Vacancies",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Overseas Job Vacancies | Nice Recruitment Agency",
     description:
       "Discover international job opportunities and foreign employment vacancies through Nice Recruitment Agency.",
-    images: ["https://www.nicerecruitment.org/logo/favicon.png"],
+    images: ["https://nicerecruitment.org/og/og-nice.jpg"],
   },
 
   robots: {
@@ -65,7 +65,7 @@ const jobsSchema = {
   name: "Overseas Job Vacancies | Nice Recruitment Agency",
   description:
     "Explore overseas job opportunities through Nice Recruitment Agency. Find vacancies with trusted international employers across various industries and destinations.",
-  url: "https://www.nicerecruitment.org/jobs",
+  url: "https://nicerecruitment.org/jobs",
 
   mainEntity: {
     "@type": "ItemList",
@@ -81,7 +81,7 @@ const jobsSchema = {
           hiringOrganization: {
             "@type": "Organization",
             name: "Nice Recruitment Agency",
-            url: "https://www.nicerecruitment.org",
+            url: "https://nicerecruitment.org",
           },
           jobLocation: {
             "@type": "Place",
@@ -91,7 +91,7 @@ const jobsSchema = {
             },
           },
           employmentType: "FULL_TIME",
-          url: "https://www.nicerecruitment.org/jobs/construction-worker",
+          url: "https://nicerecruitment.org/jobs/construction-worker",
         },
       },
       {
@@ -113,7 +113,7 @@ const jobsSchema = {
             },
           },
           employmentType: "FULL_TIME",
-          url: "https://www.nicerecruitment.org/jobs/warehouse-assistant",
+          url: "https://nicerecruitment.org/jobs/warehouse-assistant",
         },
       },
     ],

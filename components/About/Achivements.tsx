@@ -17,9 +17,9 @@ export default function Achievements({ title, stats }: AchievementsProps) {
       {/* Title — full width on mobile, left column on desktop */}
       <div className="w-full md:flex-1 flex flex-col justify-center px-8 py-10 md:py-12 border-b-2 md:border-b-0 md:border-r-2 border-white">
         {title.map((line, i) => (
-          <h1 key={i} className="text-3xl md:text-4xl font-bold text-white leading-tight">
+          <h2 key={i} className="text-3xl md:text-4xl font-bold text-white leading-tight">
             {line}
-          </h1>
+          </h2>
         ))}
       </div>
 

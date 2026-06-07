@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.nicerecruitment.org/services",
+    canonical: "https://nicerecruitment.org/services",
   },
 
   openGraph: {
     title: "Our Services | Nice Recruitment Agency",
     description:
       "Discover our overseas recruitment, workforce placement, candidate sourcing, and employer support services for international hiring needs.",
-    url: "https://www.nicerecruitment.org/services",
+    url: "https://nicerecruitment.org/services",
     siteName: "Nice Recruitment Agency",
     images: [
       {
-        url: "https://www.nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org/og/og-nice.jpg",
         width: 1200,
         height: 630,
         alt: "Nice Recruitment Agency Services",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Our Services | Nice Recruitment Agency",
     description:
       "Professional overseas recruitment and workforce solutions for employers and job seekers.",
-    images: ["https://www.nicerecruitment.org/logo/favicon.png"],
+    images: ["https://nicerecruitment.org/og/og-nice.jpg"],
   },
 
   robots: {
@@ -65,7 +65,7 @@ const servicesSchema = {
   name: "Our Services | Overseas Recruitment & Workforce Solutions",
   description:
     "Explore Nice Recruitment Agency's recruitment services including candidate sourcing, workforce placement, overseas recruitment, employer support, and documentation assistance.",
-  url: "https://www.nicerecruitment.org/services",
+  url: "https://nicerecruitment.org/services",
 
   mainEntity: {
     "@type": "ItemList",
@@ -83,7 +83,7 @@ const servicesSchema = {
         publisher: {
           "@type": "Organization",
           name: "Nice Recruitment Agency",
-          url: "https://www.nicerecruitment.org",
+          url: "https://nicerecruitment.org",
         },
       },
       {

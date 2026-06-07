@@ -86,7 +86,7 @@ const CompanyProfile = () => {
             </div>
           </div>
           <div className="flex justify-center">
-            <Button>Learn More</Button>
+            <Button>Learn More About Us</Button>
           </div>
         </div>
       </div>

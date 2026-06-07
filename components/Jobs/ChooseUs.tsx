@@ -61,13 +61,13 @@ const ChooseUs = () => {
                 icon="mdi:lightning-bolt"
                 label="How We Empower"
               />
-              <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+              <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
                 From Nepal to the Gulf
                 <br className="hidden md:block" />
                 <span className="text-[#2089CA]">
                   - Fully Prepared.
                 </span>
-              </h2>
+              </h1>
               <p className="text-base md:text-lg  text-zinc-500 leading-relaxed">
                 Every worker we deploy goes through a rigorous empowerment program —
                 training, certification, documentation, and ongoing support.

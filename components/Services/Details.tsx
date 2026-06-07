@@ -66,7 +66,7 @@ const Details = () => {
               <p className="text-sm md:text-lg text-neutral-500 ">
                 {item.description}
               </p>
-              <Button>Learn More</Button>
+              <Button>Learn in Detail</Button>
             </div>
           </div>
         ))}

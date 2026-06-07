@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.nicerecruitment.org/about",
+    canonical: "https://nicerecruitment.org/about",
   },
 
   openGraph: {
     title: "About Nice Recruitment Agency",
     description:
       "Nice Recruitment Agency is a trusted manpower recruitment agency in Nepal, connecting qualified Nepali workers with reputable employers across international markets.",
-    url: "https://www.nicerecruitment.org/about",
+    url: "https://nicerecruitment.org/about",
     siteName: "Nice Recruitment Agency",
     images: [
       {
-        url: "https://www.nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org/og/og-nice.jpg",
         width: 1200,
         height: 630,
         alt: "Nice Recruitment Agency",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "About Nice Recruitment Agency",
     description:
       "Learn about Nice Recruitment Agency and our commitment to ethical overseas recruitment and workforce placement services from Nepal.",
-    images: ["https://www.nicerecruitment.org/og/about.png"],
+    images: ["https://nicerecruitment.org/og/about.png"],
   },
 
   robots: {
@@ -64,24 +64,24 @@ const aboutSchema = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": "https://www.nicerecruitment.org/about#aboutpage",
-      url: "https://www.nicerecruitment.org/about",
+      "@id": "https://nicerecruitment.org/about#aboutpage",
+      url: "https://nicerecruitment.org/about",
       name: "About Nice Recruitment Agency",
       description:
         "Learn about Nice Recruitment Agency, a trusted manpower recruitment agency in Nepal connecting skilled Nepali workers with international employers.",
       isPartOf: {
-        "@id": "https://www.nicerecruitment.org/#website",
+        "@id": "https://nicerecruitment.org/#website",
       },
       about: {
-        "@id": "https://www.nicerecruitment.org/#organization",
+        "@id": "https://nicerecruitment.org/#organization",
       },
     },
     {
       "@type": "Organization",
-      "@id": "https://www.nicerecruitment.org/#organization",
+      "@id": "https://nicerecruitment.org/#organization",
       name: "Nice Recruitment Agency",
-      url: "https://www.nicerecruitment.org",
-      logo: "https://www.nicerecruitment.org/logo/favicon.png",
+      url: "https://nicerecruitment.org",
+      logo: "https://nicerecruitment.org/og/og-nice.jpg",
       description:
         "Nice Recruitment Agency is a trusted manpower recruitment agency in Nepal providing overseas recruitment, workforce placement, and employer support services.",
       email: "info@nicerecruitment.org",

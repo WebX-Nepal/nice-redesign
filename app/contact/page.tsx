@@ -62,7 +62,7 @@ export default function ContactPage() {
               label="Get In Touch"
             />
             <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
-              Let&apos;s Build Your <span className="text-[#2089CA]">
+              Let's Build Your <span className="text-[#2089CA]">
                 Workforce.
               </span>
             </h2>
@@ -167,11 +167,11 @@ export default function ContactPage() {
               {/* Right — form (desktop), First (mobile) */}
               <div className="order-1 lg:order-2 flex flex-col gap-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900">
+                  <h1 className="text-3xl font-bold text-zinc-900">
                     Send a Hiring Inquiry
-                  </h2>
+                  </h1>
                   <p className="text-zinc-500 text-base mt-2">
-                    Fill in the details and we&apos;ll match the right workers for your needs.
+                    Fill in the details and we'll match the right workers for your needs.
                   </p>
                 </div>
 

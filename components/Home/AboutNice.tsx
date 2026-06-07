@@ -27,7 +27,7 @@ export default function AboutNice() {
             {/* Left large image — full width on mobile, flex-1 on desktop */}
             <div className="relative w-full md:flex-1 h-70 md:h-auto rounded-xl overflow-hidden">
               <Image
-                src="/nepali-lady.png"
+                src="/nepali-lady.avif"
                 alt="Nice Manpower team"
                 fill
                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -39,7 +39,7 @@ export default function AboutNice() {
             <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:w-[48%]">
               <div className="relative h-40 md:h-auto md:flex-1 rounded-xl overflow-hidden">
                 <Image
-                  src="/About/nice-building.webp"
+                  src="/About/nice-building.avif"
                   alt="Nepal office"
                   fill
                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -48,7 +48,7 @@ export default function AboutNice() {
               </div>
               <div className="relative h-40 md:h-auto md:flex-1 rounded-xl overflow-hidden">
                 <Image
-                  src="/About/dubai.png"
+                  src="/About/dubai.avif"
                   alt="Dubai office"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -127,7 +127,7 @@ export default function AboutNice() {
                 className="flex px-6 py-2.5 h-12 items-center gap-3 border border-zinc-200 text-zinc-900 font-semibold rounded-full hover:bg-zinc-50 transition-colors duration-200"
               >
                 <Icon icon="mdi:book-open-variant" width="18" />
-                Learn More
+                About Us
               </Link>
             </div>
           </div>

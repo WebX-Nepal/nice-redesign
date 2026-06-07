@@ -15,13 +15,13 @@ export async function generateMetadata({
     description: outlet.description,
 
     alternates: {
-      canonical: `https://www.nicerecruitment.org/outlets/${slug}`,
+      canonical: `https://nicerecruitment.org/outlets/${slug}`,
     },
 
     openGraph: {
       title: `${outlet.city} Office | Nice Recruitment Agency`,
       description: outlet.description,
-      url: `https://www.nicerecruitment.org/outlets/${slug}`,
+      url: `https://nicerecruitment.org/outlets/${slug}`,
       siteName: "Nice Recruitment Agency",
       type: "website",
       images: [
@@ -55,39 +55,6 @@ export async function generateMetadata({
   };
 }
 
-// const outletSchema = (slug: string) => {
-//   const outlet = getOutletBySlug(slug);
-//   if(!outlet) return null;
-//  return {
-//    "@context": "https://schema.org",
-//   "@type": "LocalBusiness",
-//   name: `Nice Recruitment Agency - ${outlet.city} Office`,
-//   url: `https://www.nicerecruitment.org/outlets/${slug}`,
-//   description: outlet.description,
-
-//   image: outlet.heroImage,
-
-//   address: {
-//     "@type": "PostalAddress",
-//     streetAddress: outlet.address || "",
-//     addressLocality: outlet.city,
-//     addressCountry: "NP",
-//   },
-
-//   telephone: outlet.phone || ["+977 970-6414359","+977 970-4804825"],
-//   email: outlet.email || "info@nicerecruitment.org",
-
-//   parentOrganization: {
-//     "@type": "Organization",
-//     name: "Nice Recruitment Agency",
-//     url: "https://www.nicerecruitment.org",
-//     logo: "https://www.nicerecruitment.org/logo/favicon.png",
-//   },
-
-//   areaServed: "NP",
-
-// }
-// };
 
 export default function OutletLayout({
   children,

@@ -11,9 +11,9 @@ export default function TestimonialCarouselDemo() {
             icon="mdi:account-star-outline"
             label="What Client says"
           />
-          <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+          <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
             Trusted by many <span className="text-[#2089CA]">Worldwide.</span>
-          </h1>
+          </h2>
 
           <p className="text-zinc-500 max-w-lg text-base md:text-lg leading-relaxed">
             Trusted by companies across UAE, Qatar, and Saudi Arabia for skilled and verified workforce.

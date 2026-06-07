@@ -38,7 +38,7 @@ export default async function OutletPage({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: `Nice Recruitment Agency - ${outlet.city} Office`,
-    url: `https://www.nicerecruitment.org/outlets/${slug}`,
+    url: `https://nicerecruitment.org/outlets/${slug}`,
     description: outlet.description,
 
     image: outlet.heroImage,
@@ -56,8 +56,8 @@ export default async function OutletPage({
     parentOrganization: {
       "@type": "Organization",
       name: "Nice Recruitment Agency",
-      url: "https://www.nicerecruitment.org",
-      logo: "https://www.nicerecruitment.org/logo/favicon.png",
+      url: "https://nicerecruitment.org",
+      logo: "https://nicerecruitment.org/og/og-nice.jpg",
     },
 
     areaServed: "NP",
@@ -295,7 +295,7 @@ export default async function OutletPage({
                     src={
                       outlet.slug === "kathmandu"
                         ? "/office/dubai.jpg"
-                        : "/About/nice-building.webp"
+                        : "/About/nice-building.avif"
                     }
                     alt="Other branch"
                     fill

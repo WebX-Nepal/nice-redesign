@@ -23,11 +23,11 @@ const OurStory = () => {
               icon="mdi:book-open-outline"
               label="Our Story"
               />
-              <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+              <h1 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
                 Two Decades of <br/><span className="text-[#2089CA]">
                   Bridging Talent.
                 </span>
-              </h2>
+              </h1>
 
               <p className="text-zinc-500 text-base md:text-lg leading-relaxed ">
                 Founded in 2005, Nice Manpower Recruitment Agency connects skilled workers from Nepal with trusted job opportunities in the Gulf. Over the years, we have helped thousands of people find employment while building strong relationships with companies through trust, quality, and transparency.
@@ -45,7 +45,7 @@ const OurStory = () => {
           </div>
           <div className="relative h-100 rounded-xl overflow-hidden shadow-xl">
             <Image
-              src="/About/nice-building.webp"
+              src="/About/nice-building.avif"
               alt="Our Story"
               fill
               className="object-cover"

@@ -43,7 +43,7 @@ export default async function BlogPost({
     "@type": "BlogPosting",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.nicerecruitment.org/blogs/${slug}`,
+      "@id": `https://nicerecruitment.org/blogs/${slug}`,
     },
     headline: blog.title,
     description: blog.description,
@@ -51,17 +51,17 @@ export default async function BlogPost({
     author: {
       "@type": "Organization",
       name: "Nice Recruitment Agency",
-      url: "https://www.nicerecruitment.org",
+      url: "https://nicerecruitment.org",
     },
     publisher: {
       "@type": "Organization",
       name: "Nice Recruitment Agency",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org/og/og-nice.jpg",
       },
     },
-    url: `https://www.nicerecruitment.org/blogs/${slug}`,
+    url: `https://nicerecruitment.org/blogs/${slug}`,
     datePublished: blog.publishDate,
     dateModified: blog.publishDate,
   };

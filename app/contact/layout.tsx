@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.nicerecruitment.org/contact",
+    canonical: "https://nicerecruitment.org/contact",
   },
 
   openGraph: {
     title: "Contact Nice Recruitment Agency",
     description:
       "Get in touch with Nice Recruitment Agency for manpower recruitment services, workforce solutions, and international hiring inquiries.",
-    url: "https://www.nicerecruitment.org/contact",
+    url: "https://nicerecruitment.org/contact",
     siteName: "Nice Recruitment Agency",
     images: [
       {
-        url: "https://www.nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org/og/og-nice.jpg",
         width: 1200,
         height: 630,
         alt: "Contact Nice Recruitment Agency",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Contact Nice Recruitment Agency",
     description:
       "Reach out to Nice Recruitment Agency for overseas recruitment and workforce placement services.",
-    images: ["https://www.nicerecruitment.org/logo/favicon.png"],
+    images: ["https://nicerecruitment.org/og/og-nice.jpg"],
   },
 
   robots: {
@@ -64,24 +64,24 @@ const contactSchema = {
   "@graph": [
     {
       "@type": "ContactPage",
-      "@id": "https://www.nicerecruitment.org/contact#contactpage",
-      url: "https://www.nicerecruitment.org/contact",
+      "@id": "https://nicerecruitment.org/contact#contactpage",
+      url: "https://nicerecruitment.org/contact",
       name: "Contact Nice Recruitment Agency",
       description:
         "Get in touch with Nice Recruitment Agency for overseas recruitment, manpower services, and workforce solutions in Nepal.",
       isPartOf: {
-        "@id": "https://www.nicerecruitment.org/#website",
+        "@id": "https://nicerecruitment.org/#website",
       },
       about: {
-        "@id": "https://www.nicerecruitment.org/#organization",
+        "@id": "https://nicerecruitment.org/#organization",
       },
     },
     {
       "@type": "Organization",
-      "@id": "https://www.nicerecruitment.org/#organization",
+      "@id": "https://nicerecruitment.org/#organization",
       name: "Nice Recruitment Agency",
-      url: "https://www.nicerecruitment.org",
-      logo: "https://www.nicerecruitment.org/logo/favicon.png",
+      url: "https://nicerecruitment.org",
+      logo: "https://nicerecruitment.org/og/og-nice.jpg",
       email: "info@nicerecruitment.org",
       telephone: ["+977 970-6414359","+977 970-4804825"],
       address: {

@@ -14,7 +14,7 @@ const branches = [
     address: "Samakhusi, Kathmandu, Nepal",
     phone: "+977 970-6414359",
     email: "info@nicerecruitment.org",
-    image: "/About/nice-building.webp",
+    image: "/About/nice-building.avif",
     accent: "from-blue-900/80",
     description:
       "Our founding headquarters — where every recruitment journey begins. The Kathmandu office manages candidate sourcing, training, documentation, and government compliance.",
@@ -45,9 +45,9 @@ const Outlets = () => {
               icon="mdi:map-marker-multiple-outline"
               label="Our Offices"
             />
-            <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+            <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
               Two Offices, <span className="text-[#2089CA]">One Mission.</span>
-            </h1>
+            </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
               Headquartered in Kathmandu with a Gulf branch in Dubai — we&apos;re
               present at both ends of every placement.

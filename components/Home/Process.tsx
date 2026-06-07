@@ -14,9 +14,9 @@ const Process = () => {
               label="How It Works"
               icon="mdi:clipboard-list-outline"
             />
-            <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+            <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
               Our Hiring <span className="text-[#2089CA]">Process.</span>
-            </h1>
+            </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
               A simple 5-step process — from your first inquiry to workers
               arriving on-site.

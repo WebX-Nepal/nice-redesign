@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LenisWrapper from "@/components/LenisWrapper";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,42 +18,44 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const fustat=Fustat({
-  subsets:["latin"],
-  weight:["200","300","400","500","600","700","800"],
-  variable:"--font-fustat"
-})
+const fustat = Fustat({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-fustat",
+});
 export const metadata: Metadata = {
   title: "Nice Recruiting Agency | Trusted Manpower from Nepal to the Gulf",
   description:
     "Nepal's government-licensed manpower recruitment agency. We connect skilled, verified Nepali workers with top employers across UAE, Qatar, Saudi Arabia, Kuwait, Oman, and Bahrain.",
-  keywords:"Nice Recruitment Agency,Manpower Agency Nepal, Foreign Employment Agency Nepal, Recruitment Agency in Nepal, Job Consultancy Nepal",
-  alternates:{
-    canonical: "https://nicerecruitment.org"
+  keywords:
+    "Nice Recruitment Agency,Manpower Agency Nepal, Foreign Employment Agency Nepal, Recruitment Agency in Nepal, Job Consultancy Nepal",
+  alternates: {
+    canonical: "https://nicerecruitment.org",
   },
-  openGraph:{
+  openGraph: {
     title: "Nice Recruitment Agency | Trusted Manpower from Nepal to the Gulf",
-    description: "Nepal's government-licensed manpower recruitment agency. We connect skilled, verified Nepali workers with top employers across UAE, Qatar, Saudi Arabia, Kuwait, Oman, and Bahrain.",
+    description:
+      "Nepal's government-licensed manpower recruitment agency. We connect skilled, verified Nepali workers with top employers across UAE, Qatar, Saudi Arabia, Kuwait, Oman, and Bahrain.",
     url: "https://nicerecruitment.org",
     siteName: "Nice Recruitment Agency",
     images: [
       {
-        url: "https://nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org/og/og-nice.jpg",
         width: 1200,
         height: 630,
-        alt: "Nice Recruitment Agency | Trusted Manpower from Nepal to the Gulf"
-      }
+        alt: "Nice Recruitment Agency | Trusted Manpower from Nepal to the Gulf",
+      },
     ],
     locale: "en_US",
     type: "website",
   },
 
-  twitter:{
+  twitter: {
     card: "summary_large_image",
     title: "Nice Recruitment Agency | Trusted Manpower from Nepal to the Gulf",
     description:
       "Nepal's government-licensed manpower recruitment agency. We connect skilled, verified Nepali workers with top employers across UAE, Qatar, Saudi Arabia, Kuwait, Oman, and Bahrain.",
-    images: ["https://nicerecruitment.org/logo/favicon.png"],
+    images: ["https://nicerecruitment.org/og/og-nice.jpg"],
   },
 
   robots: {
@@ -66,7 +69,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-
 };
 
 export default function RootLayout({
@@ -76,6 +78,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+      {/* Google analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-Z6WZC3KLQW"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+        gtag('config', 'G-Z6WZC3KLQW');
+      `}
+      </Script>
+
       <body
         className={`${inter.variable} ${playfair.variable} ${fustat.variable} antialiased bg-white `}
         suppressHydrationWarning={true}

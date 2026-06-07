@@ -13,10 +13,10 @@ export default function Home() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://www.nicerecruitment.org/#organization",
+        "@id": "https://nicerecruitment.org/#organization",
         name: "Nice Recruitment Agency",
-        url: "https://www.nicerecruitment.org",
-        logo: "https://www.nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org",
+        logo: "https://nicerecruitment.org/og/og-nice.jpg",
         description:
           "Nice Recruitment Agency is a trusted manpower recruitment agency in Nepal connecting skilled Nepali workers with international employers.",
         email: "info@nicerecruitment.org",
@@ -29,18 +29,18 @@ export default function Home() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.nicerecruitment.org/#website",
-        url: "https://www.nicerecruitment.org",
+        "@id": "https://nicerecruitment.org/#website",
+        url: "https://nicerecruitment.org",
         name: "Nice Recruitment Agency",
         publisher: {
-          "@id": "https://www.nicerecruitment.org/#organization",
+          "@id": "https://nicerecruitment.org/#organization",
         },
       },
       {
         "@type": "Service",
         name: "Overseas Recruitment Services",
         provider: {
-          "@id": "https://www.nicerecruitment.org/#organization",
+          "@id": "https://nicerecruitment.org/#organization",
         },
         serviceType: "Manpower Recruitment",
         areaServed: "Worldwide",

@@ -1,5 +1,5 @@
 "use client";
-import logo from "../../public/nice-logo.png";
+import logo from "../../public/nice-logo-resize.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";

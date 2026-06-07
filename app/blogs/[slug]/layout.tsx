@@ -19,13 +19,13 @@ export async function generateMetadata({
     title: `${blog.title} | Nice Recruitment Agency Blog`,
     description: blog.description,
     alternates: {
-      canonical: `https://www.nicerecruitment.org/blogs/${slug}`,
+      canonical: `https://nicerecruitment.org/blogs/${slug}`,
     },
 
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://www.nicerecruitment.org/blogs/${slug}`,
+      url: `https://nicerecruitment.org/blogs/${slug}`,
       siteName: "Nice Recruitment Agency",
       type: "article",
       images: [

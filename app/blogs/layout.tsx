@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.nicerecruitment.org/blogs",
+    canonical: "https://nicerecruitment.org/blogs",
   },
 
   openGraph: {
     title: "Blogs by Nice Recruitment Agency",
     description:
       "Nice Recruitment Agency is a trusted manpower recruitment agency in Nepal, connecting qualified Nepali workers with reputable employers across international markets.",
-    url: "https://www.nicerecruitment.org/blog",
+    url: "https://nicerecruitment.org/blog",
     siteName: "Nice Recruitment Agency",
     images: [
       {
-        url: "https://www.nicerecruitment.org/logo/favicon.png",
+        url: "https://nicerecruitment.org/og/og-nice.jpg",
         width: 1200,
         height: 630,
         alt: "Nice Recruitment Agency",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "About Nice Recruitment Agency",
     description:
       "Learn about Nice Recruitment Agency and our commitment to ethical overseas recruitment and workforce placement services from Nepal.",
-    images: ["https://www.nicerecruitment.org/og/about.png"],
+    images: ["https://nicerecruitment.org/og/about.png"],
   },
 
   robots: {
@@ -65,7 +65,7 @@ const blogsSchema = {
   name: "Blog | Overseas Employment & Recruitment Insights",
   description:
     "Read expert articles on overseas employment, international recruitment, career development, visa requirements, and workforce solutions from Nice Recruitment Agency.",
-  url: "https://www.nicerecruitment.org/blogs",
+  url: "https://nicerecruitment.org/blogs",
   mainEntity: {
     "@type": "Blog",
     name: "Nice Recruitment Agency Blog",
@@ -75,7 +75,7 @@ const blogsSchema = {
     name: "Nice Recruitment Agency",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.nicerecruitment.org/logo/favicon.png",
+      url: "https://nicerecruitment.org/og/og-nice.jpg",
     },
   },
 };

@@ -16,11 +16,11 @@ export default function BlogsGrid() {
               icon={"mdi:newspaper-variant-outline"}
               label="Blog Articles"
             />
-            <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+            <h1 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
               Latest <span className="text-[#2089CA]">
                 Insights.
               </span>
-            </h2>
+            </h1>
             <p className="text-zinc-500 text-base md:text-lg leading-relaxed ">
               Industry tips, recruitment guides, and workforce insights from our
               team.

@@ -14,11 +14,11 @@ const
                 icon="mdi:briefcase-outline"
                 label="What We Offer"
               />
-              <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+              <h1 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
                 Skilled Manpower for <span className="text-[#2089CA]">
                   Every Industry .
                 </span>
-              </h2>
+              </h1>
 
               <p className="text-zinc-500  text-base md:text-lg leading-relaxed ">
                 We provide verified, reliable Nepali workers across multiple industries — helping Gulf businesses build efficient and dependable workforces from day one.<br />

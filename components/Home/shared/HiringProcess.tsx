@@ -46,7 +46,7 @@ export default function StepsSection() {
                             {isEven && (
                                 <div className="flex flex-col gap-2 pb-10 pr-4 text-right mt-2">
                                     <span className="text-sm font-bold uppercase  text-[#2089CA]">
-                                        <h1>Step {index + 1}</h1>
+                                        <h3>Step {index + 1}</h3>
                                     </span>
                                     <div className="flex items-center justify-end gap-2">
                                         <h3 className="text-[1.2rem] font-bold text-[#2089CA] leading-snug tracking-[-0.01em]">
@@ -88,7 +88,7 @@ export default function StepsSection() {
                             {!isEven && (
                                 <div className="flex flex-col gap-2 pb-10 pl-4 mt-2">
                                     <span className="text-sm font-semibold uppercase  text-[#2089CA]">
-                                        <h1>Step {index + 1}</h1>
+                                        <h3>Step {index + 1}</h3>
                                     </span>
                                     <div className="flex items-center gap-2">
                                         <h3 className="text-[1.2rem] font-bold  text-[#2089CA] leading-snug tracking-[-0.01em]">
