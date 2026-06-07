@@ -3,39 +3,39 @@ import Image from "next/image";
 
 export const IMAGES = [
   {
-    src: "/hero/imageplay/burj_khalifa.jpg",
+    src: "/hero/imageplay/burj_khalifa.avif",
     country: "UAE",
-    flag: "/flags/united.png",
+    flag: "/flags/united.avif",
   },
   {
-    src: "/hero/imageplay/quatar_doha.jpg",
+    src: "/hero/imageplay/quatar_doha.avif",
     country: "Qatar",
-    flag: "/flags/qatar.jpg",
+    flag: "/flags/qatar.avif",
   },
   {
-    src: "/hero/imageplay/saudi_jeedah.jpg",
+    src: "/hero/imageplay/saudi_jeedah.avif",
     country: "Saudi Arabia",
-    flag: "/flags/saudi.png",
+    flag: "/flags/saudi.avif",
   },
   {
-    src: "/hero/imageplay/kuwait.jpg",
+    src: "/hero/imageplay/kuwait.avif",
     country: "Kuwait",
-    flag: "/flags/kuwait.png",
+    flag: "/flags/kuwait.avif",
   },
   {
-    src: "/hero/imageplay/oman.jpg",
+    src: "/hero/imageplay/oman.avif",
     country: "Oman",
-    flag: "/flags/oman.png",
+    flag: "/flags/oman.avif",
   },
   {
-    src: "/hero/imageplay/bahrin.jpg",
+    src: "/hero/imageplay/bahrin.avif",
     country: "Bahrain",
-    flag: "/flags/bahrain.png",
+    flag: "/flags/bahrain.avif",
   },
   {
-    src: "/hero/imageplay/malaysia.jpg",
+    src: "/hero/imageplay/malaysia.avif",
     country: "Malaysia",
-    flag: "/flags/malaysia-flag.jpg",
+    flag: "/flags/malaysia-flag.avif",
   },
 ];
 

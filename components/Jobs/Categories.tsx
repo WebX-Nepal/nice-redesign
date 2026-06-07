@@ -8,7 +8,7 @@ const talents = [
     title: "Construction Workers",
     description:
       "Masons, carpenters, steel fixers, electricians and plumbers trained for large-scale Gulf builds.",
-    image: "/jobs/construction_workers.jpg",
+    image: "/jobs/construction_workers.avif",
     icon: "mdi:hard-hat",
     count: "500+ deployed",
     skills: ["Masonry", "Carpentry", "Steel Fixing", "Electrical"],
@@ -17,7 +17,7 @@ const talents = [
     title: "Hospitality Staff",
     description:
       "Chefs, waiters, housekeeping and front desk staff trained to deliver five-star service.",
-    image: "/jobs/hospitality_staff.jpg",
+    image: "/jobs/hospitality_staff.avif",
     icon: "mdi:room-service",
     count: "300+ deployed",
     skills: ["Food Service", "Housekeeping", "Front Desk", "Kitchen"],
@@ -26,7 +26,7 @@ const talents = [
     title: "Security Personnel",
     description:
       "Disciplined, certified security guards trained in Gulf safety standards and protocols.",
-    image: "/jobs/security.jpg",
+    image: "/jobs/security.avif",
     icon: "mdi:shield-account",
     count: "400+ deployed",
     skills: ["Surveillance", "Access Control", "Emergency Response", "Patrol"],
@@ -35,7 +35,7 @@ const talents = [
     title: "General Labour",
     description:
       "Hardworking general workers for warehouses, cleaning, loading and operational roles.",
-    image: "/jobs/general_labour.jpg",
+    image: "/jobs/general_labour.avif",
     icon: "mdi:account-wrench",
     count: "600+ deployed",
     skills: ["Warehousing", "Cleaning", "Loading", "Operations"],
@@ -44,7 +44,7 @@ const talents = [
     title: "Facility Management",
     description:
       "Experienced facility staff for maintenance and operations of commercial properties.",
-    image: "/office/office.jpg",
+    image: "/office/office.avif",
     icon: "mdi:office-building-cog",
     count: "150+ deployed",
     skills: ["Maintenance", "HVAC", "Plumbing", "Cleaning"],
@@ -53,7 +53,7 @@ const talents = [
     title: "Driver & Logistics",
     description:
       "Licensed drivers and logistics personnel for transport and fleet management roles.",
-    image: "/jobs/grow.jpg",
+    image: "/jobs/grow.avif",
     icon: "mdi:truck-delivery",
     count: "200+ deployed",
     skills: ["Heavy Vehicle", "Light Vehicle", "Delivery", "Fleet Mgmt"],

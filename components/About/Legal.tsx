@@ -51,15 +51,15 @@ const Legal = () => {
             {/* Image collage */}
             <div className="grid grid-cols-2 gap-4 content-start">
               <div className="relative col-span-2 h-64 rounded-2xl overflow-hidden">
-                <Image src="/About/legal.jpg" alt="Compliance" fill className="object-cover" />
+                <Image src="/About/legal.avif" alt="Compliance" fill className="object-cover" />
                 <div className="absolute inset-0 bg-zinc-950/30" />
               </div>
               <div className="relative h-48 rounded-2xl overflow-hidden">
-                <Image src="/About/legal2.jpg" alt="Legal" fill className="object-cover" />
+                <Image src="/About/legal2.avif" alt="Legal" fill className="object-cover" />
                 <div className="absolute inset-0 bg-zinc-950/30" />
               </div>
               <div className="relative h-48 rounded-2xl overflow-hidden">
-                <Image src="/About/legal3.jpg" alt="Compliance" fill className="object-cover" />
+                <Image src="/About/legal3.avif" alt="Compliance" fill className="object-cover" />
                 <div className="absolute inset-0 bg-zinc-950/30" />
               </div>
             </div>

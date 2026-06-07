@@ -34,8 +34,43 @@ export default async function OutletPage({
 
   const paragraphs = outlet.longDescription.split("\n\n");
 
+  const outletSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `Nice Recruitment Agency - ${outlet.city} Office`,
+    url: `https://www.nicerecruitment.org/outlets/${slug}`,
+    description: outlet.description,
+
+    image: outlet.heroImage,
+
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: outlet.address || "",
+      addressLocality: outlet.city,
+      addressCountry: "NP",
+    },
+
+    telephone: outlet.phone || ["+977 970-6414359", "+977 970-4804825"],
+    email: outlet.email || "info@nicerecruitment.org",
+
+    parentOrganization: {
+      "@type": "Organization",
+      name: "Nice Recruitment Agency",
+      url: "https://www.nicerecruitment.org",
+      logo: "https://www.nicerecruitment.org/logo/favicon.png",
+    },
+
+    areaServed: "NP",
+  };
+
   return (
     <main className="bg-white pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(outletSchema),
+        }}
+      />
       {/* Hero */}
       <div className="relative w-full h-[60vh] min-h-[400px]">
         <Image

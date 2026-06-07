@@ -82,7 +82,7 @@ const ChooseUs = () => {
             </div>
             <div className="relative h-100 rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/design.png"
+                src="/design.avif"
                 alt="Our Story"
                 fill
                 className="object-cover"

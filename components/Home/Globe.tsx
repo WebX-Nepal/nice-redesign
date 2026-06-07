@@ -31,9 +31,9 @@ export function Globe() {
               <Icon icon="mdi:earth" width="16" />
               Global Reach
             </div>
-            <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+            <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
               Our <span className="text-[#2089CA]">Global Reach.</span>
-            </h1>
+            </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
               Connecting skilled Nepali workers with top employers across the
               Gulf region — reliably, legally, and efficiently.

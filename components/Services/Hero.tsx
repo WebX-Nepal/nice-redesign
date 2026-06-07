@@ -39,7 +39,7 @@ const
               alt="services"
               fill
               className="object-cover"
-              src={"/services.png"}
+              src={"/services.avif"}
             />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
             From construction sites to five-star hotels — we supply skilled, pre-vetted workers across the Gulf.

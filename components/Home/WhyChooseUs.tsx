@@ -22,9 +22,9 @@ const WhyChooseUs = () => {
             icon="mdi:star-circle"
             label="Why Partner With Us"
           />
-          <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+          <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
             Why <span className="text-[#2089CA]">Choose Us.</span>
-          </h1>
+          </h2>
           <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
             Nice Recruiting Agency has been the Gulf&apos;s most trusted
             source for skilled, verified Nepali workers for over two decades.
@@ -50,9 +50,9 @@ const WhyChooseUs = () => {
               {/* Content */}
               <div className="flex flex-col justify-end flex-1  relative translate-y-1 group-hover:translate-y-0 transition-transform duration-500 ease-out gap-2">
 
-                <h1 className="text-[1.2rem] font-bold text-zinc-900 group-hover:text-[#2089CA] leading-snug  tracking-[-0.01em] transition-colors duration-500">
+                <h3 className="text-[1.2rem] font-bold text-zinc-900 group-hover:text-[#2089CA] leading-snug  tracking-[-0.01em] transition-colors duration-500">
                   {card.title}
-                </h1>
+                </h3>
 
 
                 <p className="text-zinc-600 text-[0.8rem] leading-relaxed tracking-[0.01em]">

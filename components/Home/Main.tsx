@@ -21,9 +21,9 @@ const Main = () => {
               icon="mdi:briefcase-outline"
               label="What We Offer"
             />
-            <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+            <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
               Our <span className="text-[#2089CA]">Services.</span>
-            </h1>
+            </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
               Skilled, verified Nepali workers deployed across the Gulf — from
               construction sites to five-star hotels.
@@ -45,15 +45,15 @@ const Main = () => {
                     />
                   </div>
                   <span className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full py-1.5 px-3">
-                    <h1 className="text-xs font-bold text-[#2089CA]">{item.tag}</h1>
+                    <p className="text-xs font-bold text-[#2089CA]">{item.tag}</p>
                   </span>
                 </div>
 
                 {/* Content — lifts up on hover */}
                 <div className="flex flex-col gap-2 translate-y-1 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <h1 className="text-[1.2rem] font-bold text-zinc-900 group-hover:text-[#2089CA] leading-snug  tracking-[-0.01em] transition-colors duration-500">
+                  <h3 className="text-[1.2rem] font-bold text-zinc-900 group-hover:text-[#2089CA] leading-snug  tracking-[-0.01em] transition-colors duration-500">
                     {item.title}
-                  </h1>
+                  </h3>
                   <p className="text-zinc-600 text-[0.8rem] leading-relaxed tracking-[0.01em]">
                     {item.description}
                   </p>

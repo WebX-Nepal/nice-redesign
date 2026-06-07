@@ -28,7 +28,7 @@ const branches = [
     address: "Dubai, United Arab Emirates",
     phone: "+971 50 000 0000",
     email: "dubai@nicerecruitment.org",
-    image: "/About/dubai.png",
+    image: "/About/dubai.avif",
     accent: "from-blue-900/80",
     description:
       "Our Gulf-facing branch handles employer relations, on-ground worker support, and coordination with companies across UAE and the wider Gulf region.",

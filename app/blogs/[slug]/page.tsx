@@ -38,8 +38,42 @@ export default async function BlogPost({
 
   const paragraphs = blog.content.split("\n\n");
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.nicerecruitment.org/blogs/${slug}`,
+    },
+    headline: blog.title,
+    description: blog.description,
+    image: blog.image,
+    author: {
+      "@type": "Organization",
+      name: "Nice Recruitment Agency",
+      url: "https://www.nicerecruitment.org",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Nice Recruitment Agency",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.nicerecruitment.org/logo/favicon.png",
+      },
+    },
+    url: `https://www.nicerecruitment.org/blogs/${slug}`,
+    datePublished: blog.publishDate,
+    dateModified: blog.publishDate,
+  };
+
   return (
     <main className="bg-white pt-16 font-fustat">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogSchema),
+        }}
+      />
       {/* Hero */}
       <div className="relative w-full h-[55vh] min-h-[380px]">
         <Image

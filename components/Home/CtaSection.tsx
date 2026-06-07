@@ -19,9 +19,9 @@ const CtaSection = () => {
               icon="mdi:send"
               label="Get in Touch"
             />
-            <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
+            <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
               Scale Your Team with <span className="text-[#2089CA]">Pre-Vetted Talent.</span>
-            </h1>
+            </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
               Tell us what you need — we&apos;ll match the right workers and
               handle everything from recruitment to deployment.
@@ -32,7 +32,7 @@ const CtaSection = () => {
             {/* Left — image + info */}
             <div className="relative min-h-[420px] lg:min-h-auto">
               <Image
-                src="/work.png"
+                src="/work.avif"
                 alt="Workers"
                 fill
                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

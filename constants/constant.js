@@ -57,7 +57,7 @@ export const homeSections = [
     description:
       "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and specialized builds.",
     buttonText: "Request Manpower",
-    image: "/jobs/construction_workers.jpg",
+    image: "/jobs/construction_workers.avif",
     icon: "mdi:hard-hat",
     tag: "High Demand",
   },
@@ -66,7 +66,7 @@ export const homeSections = [
     description:
       "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
     buttonText: "Request Manpower",
-    image: "/jobs/hospitality_staff.jpg",
+    image: "/jobs/hospitality_staff.avif",
     icon: "mdi:room-service",
     tag: "Gulf Ready",
   },
@@ -75,7 +75,7 @@ export const homeSections = [
     description:
       "Trained and disciplined security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
     buttonText: "Request Manpower",
-    image: "/jobs/security.jpg",
+    image: "/jobs/security.avif",
     icon: "mdi:shield-account",
     tag: "Certified",
   },
@@ -84,7 +84,7 @@ export const homeSections = [
     description:
       "Reliable and hardworking general workers for warehouses, cleaning, loading/unloading, and other operational roles across industries.",
     buttonText: "Request Manpower",
-    image: "/jobs/general_labour.jpg",
+    image: "/jobs/general_labour.avif",
     icon: "mdi:account-wrench",
     tag: "Available Now",
   },
@@ -93,7 +93,7 @@ export const homeSections = [
     description:
       "Experienced facility staff for maintenance, cleaning, and operations management of commercial and residential properties across the Gulf.",
     buttonText: "Request Manpower",
-    image: "/office/office.jpg",
+    image: "/office/office.avif",
     icon: "mdi:office-building-cog",
     tag: "Specialized",
   },
@@ -102,7 +102,7 @@ export const homeSections = [
     description:
       "Licensed drivers and logistics personnel for transportation, delivery, and fleet management roles in UAE, Qatar, Saudi Arabia and beyond.",
     buttonText: "Request Manpower",
-    image: "/jobs/grow.jpg",
+    image: "/jobs/grow.avif",
     icon: "mdi:truck-delivery",
     tag: "Licensed",
   },
@@ -114,7 +114,7 @@ export const sections = [
     description:
       "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and.",
     buttonText: "Request Manpower",
-    image: "/services/construction.jpg",
+    image: "/services/construction.avif",
     reverse: false,
   },
   {
@@ -122,7 +122,7 @@ export const sections = [
     description:
       "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
     buttonText: "Request Manpower",
-    image: "/services/hspitality.jpg",
+    image: "/services/hspitality.avif",
     reverse: true,
   },
   {
@@ -146,7 +146,7 @@ export const sections = [
     description:
       "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and.",
     buttonText: "Request Manpower",
-    image: "/services/construction.jpg",
+    image: "/services/construction.avif",
     reverse: false,
   },
   {
@@ -154,7 +154,7 @@ export const sections = [
     description:
       "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
     buttonText: "Request Manpower",
-    image: "/services/hspitality.jpg",
+    image: "/services/hspitality.avif",
     reverse: true,
   },
   {
@@ -289,22 +289,22 @@ export const specializationDetails = [
 export const cards = [
   {
     title: "Verified & Skilled Workers Only",
-    img: "/skill.jpg",
+    img: "/skill.avif",
     icon: "bitcoin-icons:verify-filled"
   },
   {
     title: "Fast Deployment Process",
-    img: "/dep.jpg",
+    img: "/dep.avif",
     icon: "mdi:run-fast"
   },
   {
     title: "Legal & Government Approved",
-    img: "/law.jpg",
+    img: "/law.avif",
     icon: "mdi:legal"
   },
   {
     title: "End-to-End Recruitment",
-    img: "/recruit.jpg",
+    img: "/recruit.avif",
     icon: "fluent-mdl2:recruitment-management"
   },
 ];

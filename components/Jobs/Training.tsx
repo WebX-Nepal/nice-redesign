@@ -3,11 +3,11 @@ import Image from "next/image";
 import Badge from "../Home/shared/Badge";
 const trainingImages = [
     {
-        src: "/skills.png",
+        src: "/skills.avif",
         label: "Skills Assessment",
     },
     {
-        src: "/class.png",
+        src: "/class.avif",
         label: "Classroom Training",
     },
     {
@@ -15,7 +15,7 @@ const trainingImages = [
         label: "Pratical Training",
     },
     {
-        src: "/certy.png",
+        src: "/certy.avif",
         label: "Certification",
     },
 ];

@@ -4,11 +4,11 @@ import Image from "next/image";
 import ContainerWrapper from "@/components/shared/ContainerWrapper";
 import Badge from "@/components/Home/shared/Badge";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Nice Recruiting Agency",
-  description:
-    "Get in touch with Nice Recruiting Agency. Submit a hiring inquiry or reach us directly via phone, email, or WhatsApp.",
-};
+// export const metadata: Metadata = {
+//   title: "Contact Us | Nice Recruiting Agency",
+//   description:
+//     "Get in touch with Nice Recruiting Agency. Submit a hiring inquiry or reach us directly via phone, email, or WhatsApp.",
+// };
 
 const trustPoints = [
   { icon: "mdi:clock-fast", text: "Response within 24 hours" },
