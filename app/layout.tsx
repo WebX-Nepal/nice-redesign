@@ -24,11 +24,11 @@ const fustat = Fustat({
   variable: "--font-fustat",
 });
 export const metadata: Metadata = {
-  title: "Nice Recruiting Agency | Trusted Manpower from Nepal to the Gulf",
+  title: "Nice Recruiting Agency | Trusted and Government Approved Manpower Agency from Nepal to the Gulf",
   description:
-    "Nepal's government-licensed manpower recruitment agency. We connect skilled, verified Nepali workers with top employers across UAE, Qatar, Saudi Arabia, Kuwait, Oman, and Bahrain.",
+    "Nepal's government-licensed manpower recruitment agency connecting skilled, verified Nepali workers with top employers across UAE, Qatar, Saudi Arabia, Kuwait, Oman, and Bahrain.",
   keywords:
-    "Nice Recruitment Agency,Manpower Agency Nepal, Foreign Employment Agency Nepal, Recruitment Agency in Nepal, Job Consultancy Nepal",
+    "Nice Recruitment Agency, Manpower Agency Nepal, Foreign Employment Agency Nepal, Recruitment Agency in Nepal, Job Consultancy Nepal, Nepal Manpower Agency, Manpower Agency in Nepal, Manpower Company Nepal, Nepal Overseas Recruitment Agency, Licensed manpower Agency Nepal, Trusted Manpower Company Nepal, Nepal Manpower Agency for Dubai, Qatar, Saudi Arabia, Europe, Baideshik Rojgar, Baideshik Rojgar Nepal, Baideshik Rojgar job Nepal ",
   alternates: {
     canonical: "https://nicerecruitment.org",
   },
@@ -78,7 +78,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       {/* Google analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-Z6WZC3KLQW"

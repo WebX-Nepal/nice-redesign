@@ -13,35 +13,28 @@ import Typewriter from "../shared/TypeWriter";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const countries = [
-  "UAE.",
-  "Qatar.",
-  "Saudi.",
-  "Kuwait.",
-  "Oman.",
-  "Bahrain.",
-];
+const countries = ["UAE.", "Qatar.", "Saudi.", "Kuwait.", "Oman.", "Bahrain."];
 
 const stats = [
   {
     icon: "mdi:account-group",
     value: "2,000+",
-    label: "Workers Deployed",
+    label: "Workers Placed Abroad",
   },
   {
     icon: "mdi:earth",
     value: "7+",
-    label: "Countries Served",
+    label: "Countries Including Gulf",
   },
   {
     icon: "mdi:shield-check",
     value: "Licensed",
-    label: "Govt. Approved",
+    label: "Gov.  Approved Agency",
   },
   {
     icon: "mdi:calendar-check",
     value: "20+",
-    label: "Years of Experience",
+    label: "Years in Overseas Recruitment",
   },
 ];
 
@@ -77,7 +70,7 @@ const Hero = () => {
         opacity: 1,
         duration: 1,
         ease: "power4.out",
-      }
+      },
     );
   }, [index]);
 
@@ -125,9 +118,10 @@ const Hero = () => {
             {/* Left */}
             <div className="w-full md:w-[50%] flex flex-col gap-6 md:gap-10 justify-center h-full">
               <h1 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
-                Reliable Workforce <br />
+                {/* Reliable Workforce <br /> */}
+                Recruitment Agency in Nepal for Overseas Job <br />
                 from Nepal to{" "}
-                <Typewriter className="text-[#2089CA]" words={countries}/>
+                <Typewriter className="text-[#2089CA]" words={countries} />
               </h1>
 
               <div className="grid grid-cols-2 gap-2 w-full sm:w-fit items-center">
@@ -156,9 +150,15 @@ const Hero = () => {
               <div className="w-full bg-gray-300 h-px" />
 
               <p className="text-sm md:text-base lg:text-lg text-zinc-500 leading-relaxed">
-                We connect skilled, verified Nepali workers with top employers
-                across the Gulf and beyond — handling everything from
-                recruitment to deployment.
+                {/* We connect skilled and verified Nepali workers with employers in
+                Bahrain and the Gulf region, providing complete manpower
+                recruitment and deployment services. */}
+                We are a government licensed recruitment agency in Nepal
+                connecting skilled and verified Nepali workers with employers
+                across Gulf Region. We
+                provide complete overseas manpower recruitment services
+                including job placement, documentation, visa processing, and
+                safe deployment.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
@@ -171,10 +171,10 @@ const Hero = () => {
 
                 <button
                   onClick={() => scrollToSection("process")}
-                  className="flex w-full sm:w-auto justify-center items-center bg-white gap-2 cursor-pointer px-4 md:px-6 py-2.5 text-sm md:text-base h-11 md:h-12 font-semibold text-zinc-900 border border-zinc-200 rounded-full hover:bg-zinc-50 transition-colors duration-200"
+                  className="flex w-full sm:w-auto justify-center items-center bg-white gap-2 cursor-pointer px-4 md:px-6 py-2.5 text-sm md:text-md h-11 md:h-12 font-semibold text-zinc-900 border border-zinc-200 rounded-full hover:bg-zinc-50 transition-colors duration-200"
                 >
                   <Icon icon="mdi:chevron-down" width="18" />
-                  View Our Process
+                  View Process
                 </button>
               </div>
             </div>

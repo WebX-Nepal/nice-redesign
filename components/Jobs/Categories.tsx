@@ -68,18 +68,16 @@ const Categories = () => {
         <ContainerWrapper className="h-fit">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-4">
-              <Badge
-                icon="mdi:account-group-outline"
-                label="Talent Pool"
-              />
+              <Badge icon="mdi:account-group-outline" label="Talent Pool" />
               <h2 className="text-4xl  md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
-                Our <span className="text-[#2089CA]">
-                  Skilled Talents.
-                </span>
+                Our <span className="text-[#2089CA]">Skilled Talents.</span>
               </h2>
               <p className="text-zinc-500 text-base md:text-lg leading-relaxed w-full md:w-[45%]">
-                Every category below represents a pool of trained, certified,
-                and Gulf-ready workers.
+                {/* Every category below represents a pool of trained, certified,
+                and Gulf-ready workers. */}
+                Every category below represents trained, certified, and
+                deployment ready Nepali workers prepared for International Employment
+                opportunities.
               </p>
               <Button
                 icon="mdi:arrow-right"
@@ -105,19 +103,26 @@ const Categories = () => {
                     />
                     <div className="absolute inset-0 bg-zinc-950/30" />
                     <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Icon icon={talent.icon} width="20" className="text-white" />
+                      <Icon
+                        icon={talent.icon}
+                        width="20"
+                        className="text-white"
+                      />
                     </div>
                     <div className="absolute top-3 right-3 bg-[#2089CA] text-white text-xs font-bold px-4 py-2 rounded-full">
                       {talent.count}
                     </div>
-                                               
                   </div>
 
                   {/* Content */}
                   <div className="p-4 md:p-7 flex flex-col gap-4 flex-1">
                     <div>
-                      <h3 className="text-lg font-bold text-zinc-900 mb-1">{talent.title}</h3>
-                      <p className="text-zinc-500 text-sm leading-relaxed">{talent.description}</p>
+                      <h3 className="text-lg font-bold text-zinc-900 mb-1">
+                        {talent.title}
+                      </h3>
+                      <p className="text-zinc-500 text-sm leading-relaxed">
+                        {talent.description}
+                      </p>
                     </div>
 
                     {/* Skills */}
@@ -146,11 +151,8 @@ const Categories = () => {
               ))}
             </div>
           </div>
-
         </ContainerWrapper>
       </section>
-
-
     </>
   );
 };

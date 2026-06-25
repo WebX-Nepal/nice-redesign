@@ -31,7 +31,6 @@ const OurStory = () => {
 
               <p className="text-zinc-500 text-base md:text-lg leading-relaxed ">
                 Founded in 2005, Nice Manpower Recruitment Agency connects skilled workers from Nepal with trusted job opportunities in the Gulf. Over the years, we have helped thousands of people find employment while building strong relationships with companies through trust, quality, and transparency.
-
               </p>
               <Button
                 icon="mdi:arrow-right"

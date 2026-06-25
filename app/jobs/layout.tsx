@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Talents | Foreign Employment Jobs from Nepal",
+  title: "Foreign Employment Jobs for Nepali Workers | Latest Overseas Vacancies",
   description:
     "Explore overseas job opportunities through Nice Recruitment Agency. Find vacancies with trusted international employers across various industries and destinations.",
 

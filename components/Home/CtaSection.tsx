@@ -23,8 +23,7 @@ const CtaSection = () => {
               Scale Your Team with <span className="text-[#2089CA]">Pre-Vetted Talent.</span>
             </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
-              Tell us what you need — we&apos;ll match the right workers and
-              handle everything from recruitment to deployment.
+              Tell us what you need and we will match the right workers while managing everything from recruitment to final deployment.
             </p>
           </div>
           {/* Main card */}
@@ -37,6 +36,7 @@ const CtaSection = () => {
                 fill
                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950/90 via-zinc-950/50 to-zinc-950/20" />
 

@@ -14,9 +14,10 @@ const services = [
 ];
 
 const socials = [
-  { icon: "mdi:facebook", href: "#", label: "Facebook" },
-  { icon: "mdi:instagram", href: "#", label: "Instagram" },
-  { icon: "mdi:linkedin", href: "#", label: "LinkedIn" },
+  { icon: "mdi:facebook", href: "https://www.facebook.com/NiceRecruitingAgency", label: "Facebook" },
+  // { icon: "mdi:instagram", href: "#", label: "Instagram" },
+  { icon: "prime:tiktok", href: "https://www.tiktok.com/@nicerecruitingagency1062", label: "Tiktok" },
+  { icon: "mdi:linkedin", href: "https://np.linkedin.com/in/yam-bc-64831b208", label: "LinkedIn" },
   {
     icon: "logos:whatsapp-icon",
     href: "https://wa.me/9779706414359",

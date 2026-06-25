@@ -17,7 +17,7 @@ const branches = [
     image: "/About/nice-building.avif",
     accent: "from-blue-900/80",
     description:
-      "Our founding headquarters — where every recruitment journey begins. The Kathmandu office manages candidate sourcing, training, documentation, and government compliance.",
+      "Our founding headquarters, where every recruitment journey begins. The Kathmandu office manages candidate sourcing, training, documentation, and government compliance.",
   },
   {
     slug: "dubai",
@@ -31,7 +31,7 @@ const branches = [
     image: "/About/dubai.avif",
     accent: "from-blue-900/80",
     description:
-      "Our Gulf-facing branch handles employer relations, on-ground worker support, and coordination with companies across UAE and the wider Gulf region.",
+      "Our Gulf facing branch handles employer relations, on-ground worker support, and coordination with companies across UAE and the wider Gulf region.",
   },
 ];
 
@@ -49,8 +49,8 @@ const Outlets = () => {
               Two Offices, <span className="text-[#2089CA]">One Mission.</span>
             </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
-              Headquartered in Kathmandu with a Gulf branch in Dubai — we&apos;re
-              present at both ends of every placement.
+              Headquartered in Kathmandu with a Gulf branch in Dubai. <br /> 
+              we're present at both ends of every placement.
             </p>
           </div>
           {/* Branch cards */}
@@ -64,7 +64,7 @@ const Outlets = () => {
                   src={branch.image}
                   alt={branch.city}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover absolute w-full h-full transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Gradient */}
                 <div

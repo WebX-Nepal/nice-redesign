@@ -18,16 +18,16 @@ const WhyChooseUs = () => {
     <ContainerWrapper className="h-fit">
       <div className="flex flex-col gap-10 ">
         <div className="flex flex-col gap-4">
-          <Badge
-            icon="mdi:star-circle"
-            label="Why Partner With Us"
-          />
+          <Badge icon="mdi:star-circle" label="Why Partner With Us" />
           <h2 className="text-4xl md:text-5xl xl:text-[3.2rem] font-semibold leading-[1.15] tracking-tight text-zinc-900">
             Why <span className="text-[#2089CA]">Choose Us.</span>
           </h2>
           <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
-            Nice Recruiting Agency has been the Gulf&apos;s most trusted
-            source for skilled, verified Nepali workers for over two decades.
+            {/* Nice Recruiting Agency has been the Gulf&apos;s most trusted
+            source for skilled, verified Nepali workers for over two decades. */}
+            Government-licensed manpower recruitment agency in Nepal providing
+            trusted overseas jobs across UAE, Qatar, Saudi Arabia and Gulf
+            countries for over two decades.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -40,23 +40,21 @@ const WhyChooseUs = () => {
               <div className="h-[78%] relative rounded-xl overflow-hidden shrink-0">
                 <Image
                   src={card.img}
-                  alt={card.title}
+                  alt={card.alt}
                   fill
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover brightness-90 rounded-xl transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
               {/* Content */}
               <div className="flex flex-col justify-end flex-1  relative translate-y-1 group-hover:translate-y-0 transition-transform duration-500 ease-out gap-2">
-
                 <h3 className="text-[1.2rem] font-bold text-zinc-900 group-hover:text-[#2089CA] leading-snug  tracking-[-0.01em] transition-colors duration-500">
                   {card.title}
                 </h3>
 
-
                 <p className="text-zinc-600 text-[0.8rem] leading-relaxed tracking-[0.01em]">
-                  Trusted, verified, and ready to deploy across the Gulf region.
+                  {card.desc}
                 </p>
               </div>
             </div>

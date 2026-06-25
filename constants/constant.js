@@ -55,7 +55,7 @@ export const homeSections = [
   {
     title: "Construction Workers",
     description:
-      "Skilled and experienced workers for construction projects including masons, carpenters, steel fixers, electricians, and plumbers, ready for large-scale and specialized builds.",
+      "Skilled Nepali construction workers including masons, carpenters, steel fixers, electricians, and plumbers for overseas jobs in UAE, Qatar, Saudi Arabia and Gulf countries.",
     buttonText: "Request Manpower",
     image: "/jobs/construction_workers.avif",
     icon: "mdi:hard-hat",
@@ -64,7 +64,7 @@ export const homeSections = [
   {
     title: "Hospitality Staff",
     description:
-      "Professional hotel and restaurant staff including waiters, chefs, housekeeping, and front desk personnel trained to deliver excellent customer service.",
+      "Trained Nepali hotel and restaurant staff including chefs, waiters, housekeeping, and front desk professionals for Gulf job placements.",
     buttonText: "Request Manpower",
     image: "/jobs/hospitality_staff.avif",
     icon: "mdi:room-service",
@@ -73,7 +73,7 @@ export const homeSections = [
   {
     title: "Security Personnel",
     description:
-      "Trained and disciplined security guards for residential, commercial, and industrial needs, ensuring safety and protection at all times.",
+      "Certified security guards from Nepal for residential, commercial, and industrial security jobs across UAE, Qatar, and Saudi Arabia.",
     buttonText: "Request Manpower",
     image: "/jobs/security.avif",
     icon: "mdi:shield-account",
@@ -82,7 +82,7 @@ export const homeSections = [
   {
     title: "General Labour",
     description:
-      "Reliable and hardworking general workers for warehouses, cleaning, loading/unloading, and other operational roles across industries.",
+      "Reliable Nepali general workers for warehouse, cleaning, loading and industrial jobs in overseas Gulf employment markets.",
     buttonText: "Request Manpower",
     image: "/jobs/general_labour.avif",
     icon: "mdi:account-wrench",
@@ -91,7 +91,7 @@ export const homeSections = [
   {
     title: "Facility Management",
     description:
-      "Experienced facility staff for maintenance, cleaning, and operations management of commercial and residential properties across the Gulf.",
+      "Experienced Nepali facility management staff for maintenance, cleaning, and operations roles in commercial and residential properties abroad.",
     buttonText: "Request Manpower",
     image: "/office/office.avif",
     icon: "mdi:office-building-cog",
@@ -100,13 +100,13 @@ export const homeSections = [
   {
     title: "Driver & Logistics",
     description:
-      "Licensed drivers and logistics personnel for transportation, delivery, and fleet management roles in UAE, Qatar, Saudi Arabia and beyond.",
+      "Licensed Nepali drivers and logistics staff for transport, delivery, and fleet management jobs in UAE, Qatar, Saudi Arabia and Gulf countries.",
     buttonText: "Request Manpower",
     image: "/jobs/grow.avif",
     icon: "mdi:truck-delivery",
     tag: "Licensed",
   },
-]
+];
 
 export const sections = [
   {
@@ -289,23 +289,31 @@ export const specializationDetails = [
 export const cards = [
   {
     title: "Verified & Skilled Workers Only",
+    desc: "Pre-verified Nepali workers ready for overseas jobs.",
     img: "/skill.avif",
-    icon: "bitcoin-icons:verify-filled"
+    alt: "Verified skilled Nepali workers for overseas recruitment",
+    icon: "bitcoin-icons:verify-filled",
   },
   {
     title: "Fast Deployment Process",
+    desc: "Quick manpower deployment from Nepal to Gulf countries.",
     img: "/dep.avif",
-    icon: "mdi:run-fast"
+    alt: "Fast overseas job deployment from Nepal manpower agency",
+    icon: "mdi:run-fast",
   },
   {
     title: "Legal & Government Approved",
+    desc: "Government-licensed recruitment agency in Nepal.",
     img: "/law.avif",
-    icon: "mdi:legal"
+    alt: "Government approved manpower recruitment agency in Nepal",
+    icon: "mdi:legal",
   },
   {
     title: "End-to-End Recruitment",
+    desc: "Complete overseas hiring from selection to deployment.",
     img: "/recruit.avif",
-    icon: "fluent-mdl2:recruitment-management"
+    alt: "End to end manpower recruitment process in Nepal",
+    icon: "fluent-mdl2:recruitment-management",
   },
 ];
 

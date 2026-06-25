@@ -27,36 +27,109 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Michael Chen",
-    title: "Senior Software Engineer, Cloud Infrastructure",
+    name: "Sanjay Shrestha",
+    title: "Construction Worker – Qatar",
     description:
-      "Working with this team completely changed our infrastructure game. The support and expertise were incredible. They delivered beyond our expectations and helped us scale to millions of users.",
+      "The recruitment process was very smooth and transparent. I got placed in Qatar quickly, and all documentation support from Nepal was handled professionally.",
     imageUrl:
-      "https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
     githubUrl: "#",
     twitterUrl: "#",
     youtubeUrl: "#",
     linkedinUrl: "#",
   },
   {
-    name: "Jessica Roberts",
-    title: "Lead Data Scientist, InsightX",
+    name: "Ramesh Karki",
+    title: "Heavy Equipment Operator – UAE",
     description:
-      "The data analytics platform they built gave our team the confidence and tools needed for true data-driven decisions. Their dashboarding capabilities went above and beyond our expectations.",
+      "Very reliable service. I got a job in Dubai with proper visa guidance and pre-departure support. Everything was well managed from start to finish.",
     imageUrl:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80",
     githubUrl: "#",
     twitterUrl: "#",
     youtubeUrl: "#",
     linkedinUrl: "#",
   },
   {
-    name: "William Carter",
-    title: "VP Product, NovaLabs",
+    name: "Prakash Gurung",
+    title: "Hotel Staff – Saudi Arabia",
     description:
-      "NovaLabs helped our products find the perfect market fit. Their engineering team exceeded every delivery milestone and provided exceptional technical leadership.",
+      "The entire hiring process was easy and well organized. I was guided properly from interview to deployment in Saudi Arabia.",
     imageUrl:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=600&q=80",
+    githubUrl: "#",
+    twitterUrl: "#",
+    youtubeUrl: "#",
+    linkedinUrl: "#",
+  },
+  {
+    name: "Dipak Thapa",
+    title: "Security Guard – Kuwait",
+    description:
+      "I am satisfied with their service. They helped me get a secure job in Kuwait with proper documentation and fast processing.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+    githubUrl: "#",
+    twitterUrl: "#",
+    youtubeUrl: "#",
+    linkedinUrl: "#",
+  },
+  {
+    name: "Bikash Lama",
+    title: "Warehouse Worker – Qatar",
+    description:
+      "Great support from the agency. They guided me step-by-step and ensured I reached Qatar without any confusion or delay.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=600&q=80",
+    githubUrl: "#",
+    twitterUrl: "#",
+    youtubeUrl: "#",
+    linkedinUrl: "#",
+  },
+  {
+    name: "Hari Adhikari",
+    title: "Electrician – UAE",
+    description:
+      "Professional and trustworthy service. I got a well-paying job in Dubai with full support during the visa and medical process.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=600&q=80",
+    githubUrl: "#",
+    twitterUrl: "#",
+    youtubeUrl: "#",
+    linkedinUrl: "#",
+  },
+  {
+    name: "Milan Shrestha",
+    title: "Plumber – Saudi Arabia",
+    description:
+      "Everything was handled professionally. I got placed in Saudi Arabia without stress, and the team was always responsive.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+    githubUrl: "#",
+    twitterUrl: "#",
+    youtubeUrl: "#",
+    linkedinUrl: "#",
+  },
+  {
+    name: "Suresh Rai",
+    title: "Hotel Cleaner – UAE",
+    description:
+      "The agency provided clear guidance from Nepal to Dubai. I am happy with the job and overall experience.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+    githubUrl: "#",
+    twitterUrl: "#",
+    youtubeUrl: "#",
+    linkedinUrl: "#",
+  },
+
+  {
+    name: "Roshan Magar",
+    title: "General Worker – Saudi Arabia",
+    description:
+      "Very helpful team. They managed everything from interview to deployment smoothly and professionally.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=600&q=80",
     githubUrl: "#",
     twitterUrl: "#",
     youtubeUrl: "#",
@@ -206,7 +279,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
                 {currentTestimonial.description}
               </p>
 
-              <div className="flex justify-center space-x-4">
+              {/* <div className="flex justify-center space-x-4">
                 {socialIcons.map(({ icon: IconComponent, url, label }) => (
                   <Link
                     key={label}
@@ -219,7 +292,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
                     <IconComponent className="w-5 h-5 text-white dark:text-gray-900" />
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           </AnimatePresence>
         </div>

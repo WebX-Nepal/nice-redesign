@@ -18,7 +18,7 @@ const Process = () => {
               Our Hiring <span className="text-[#2089CA]">Process.</span>
             </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
-              A simple 5-step process — from your first inquiry to workers
+              A simple 5-step recruitment process from your first inquiry to skilled workers
               arriving on-site.
             </p>
           </div>

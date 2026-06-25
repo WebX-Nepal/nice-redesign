@@ -25,7 +25,7 @@ const Main = () => {
               Our <span className="text-[#2089CA]">Services.</span>
             </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
-              Skilled, verified Nepali workers deployed across the Gulf — from
+              Skilled, verified Nepali workers deployed across the Gulf Region from
               construction sites to five-star hotels.
             </p>
           </div>

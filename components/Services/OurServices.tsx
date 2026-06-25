@@ -23,7 +23,7 @@ const OurServices = () => {
                 </span>
               </h2>
               <p className="text-base md:text-lg text-zinc-500 leading-relaxed md:w-[45%] w-full">
-                From construction sites to five-star hotels — we supply skilled, pre-vetted workers across the Gulf.
+                From construction sites to five-star hotels, we supply skilled, pre-vetted workers across the Gulf.
               </p>
           </div>
 

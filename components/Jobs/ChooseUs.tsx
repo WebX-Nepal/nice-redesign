@@ -9,12 +9,12 @@ const empowerments = [
   {
     icon: "mdi:school-outline",
     title: "Pre-Departure Training",
-    desc: "Workers undergo structured training covering job-specific skills, safety protocols, and Gulf workplace culture before deployment.",
+    desc: "Workers undergo structured training covering job specific skills, safety protocols, and Gulf workplace culture before deployment.",
   },
   {
     icon: "mdi:certificate-outline",
     title: "Skill Certification",
-    desc: "Each candidate is assessed and certified in their trade — ensuring employers receive workers who are ready from day one.",
+    desc: "Each candidate is assessed and certified in their trade, ensuring employers receive workers who are ready from day one.",
   },
   {
     icon: "mdi:translate",
@@ -29,7 +29,7 @@ const empowerments = [
   {
     icon: "mdi:file-document-check-outline",
     title: "Documentation Support",
-    desc: "We handle all visa, contract, and travel documentation — workers arrive fully prepared with zero paperwork stress.",
+    desc: "We handle all visa, contract, and travel documentation, workers arrive fully prepared with zero paperwork stress.",
   },
   {
     icon: "mdi:headset",
@@ -65,11 +65,11 @@ const ChooseUs = () => {
                 From Nepal to the Gulf
                 <br className="hidden md:block" />
                 <span className="text-[#2089CA]">
-                  - Fully Prepared.
+                  Fully Prepared.
                 </span>
               </h1>
               <p className="text-base md:text-lg  text-zinc-500 leading-relaxed">
-                Every worker we deploy goes through a rigorous empowerment program —
+                Every worker we deploy goes through a rigorous empowerment program
                 training, certification, documentation, and ongoing support.
               </p>
               <Button

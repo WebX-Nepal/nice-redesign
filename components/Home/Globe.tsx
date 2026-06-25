@@ -36,7 +36,7 @@ export function Globe() {
             </h2>
             <p className="text-zinc-500 max-w-lg leading-relaxed text-base md:text-lg">
               Connecting skilled Nepali workers with top employers across the
-              Gulf region — reliably, legally, and efficiently.
+              Gulf region reliably, legally, and efficiently.
             </p>
             <div className="flex flex-wrap gap-2 ">
               {destinations.map((d) => (

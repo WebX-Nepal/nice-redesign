@@ -21,8 +21,8 @@ const
               </h1>
 
               <p className="text-zinc-500  text-base md:text-lg leading-relaxed ">
-                We provide verified, reliable Nepali workers across multiple industries — helping Gulf businesses build efficient and dependable workforces from day one.<br />
-                From construction sites to five-star hotels — we supply skilled, pre-vetted workers across the Gulf.
+                We provide verified, reliable Nepali workers across multiple industries, helping Gulf businesses build efficient and dependable workforces from day one.<br />
+                From construction sites to five-star hotels. we supply skilled, pre-vetted workers across the Gulf.
               </p>
               <Button
                 icon="mdi:arrow-right"
@@ -42,7 +42,7 @@ const
               src={"/services.avif"}
             />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
-            From construction sites to five-star hotels — we supply skilled, pre-vetted workers across the Gulf.
+            From construction sites to five-star hotels, we supply skilled, pre-vetted workers across the Gulf.
           </div>
         </div>
       </ContainerWrapper>
